@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 3002;
 
-const DIST_DIR = './src/client';
+const DIST_DIR = './dist';
 
 app.use(express.static(DIST_DIR));
 
