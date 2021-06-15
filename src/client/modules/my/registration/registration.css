@@ -1,0 +1,16 @@
+.wrapper {
+    background: #effafb;
+    min-height: 220px;
+}
+.title {
+    padding-top: 28px;
+}
+.combo {
+    background: #ffffff;
+}
+.slds-input {
+    background: #ffffff !important;
+}
+.otpField {
+    max-width: 150px;
+}

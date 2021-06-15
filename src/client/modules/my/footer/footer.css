@@ -1,0 +1,14 @@
+.wrapper {
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.tds-footer-global-logo {
+    max-width: 2rem;
+}
+
+.tds-bg_white {
+    background: white;
+}
+.card-height {
+    min-height: 355px;
+}

@@ -1,0 +1,146 @@
+<template>
+    <div class="wrapper">
+        <template if:true={showForm}>
+            <div class="slds-p-around_small">
+                <div
+                    class="
+                        slds-m-top_medium
+                        slds-m-bottom_x-large
+                        slds-text-align_center
+                        slds-text-heading_large
+                    "
+                >
+                    <b>Enter your details to view content</b>
+                </div>
+                <div
+                    class="
+                        slds-grid slds-grid_align-center
+                        slds-text-align_left
+                    "
+                >
+                    <div
+                        class="
+                            slds-form-element__control
+                            slds-var-m-bottom_small
+                            slds-size_2-of-5
+                        "
+                    >
+                        <lightning-input
+                            type="email"
+                            name="email"
+                            required="true"
+                            label="Enter your company email"
+                            onchange={handleEmailChange}
+                            disabled={disableform1}
+                            class="slds-p-bottom_small"
+                        >
+                        </lightning-input>
+                        <lightning-combobox
+                            name="company"
+                            label="Choose your company"
+                            required="true"
+                            options={options}
+                            onchange={handleCompanyChange}
+                            class="slds-p-bottom_small"
+                        ></lightning-combobox>
+                        <lightning-input
+                            type="email"
+                            name="email"
+                            required="true"
+                            label="Enter your trailhead email"
+                            onchange={handleThEmailChange}
+                            disabled={disableform1}
+                            class="slds-p-bottom_small"
+                        >
+                        </lightning-input>
+                        <input
+                            type="checkbox"
+                            disabled={disableform1}
+                            name="consent"
+                            onchange={handleCheckboxChange}
+                            required="required"
+                        />
+                        <label
+                            for="terms"
+                            style="display: inline"
+                            class="slds-form-element__label"
+                        >
+                            By registering, you confirm that you agree to the
+                            <a
+                                href="https://trailblazer.me/resource/documents/documents/pdf/TermsOfUse_en_US.pdf"
+                            >
+                                Salesforce Program Agreement </a
+                            >and Be A Salesforce Developer Terms. Salesforce
+                            values your privacy. See our
+                            <a
+                                href="https://www.salesforce.com/company/privacy/full_privacy/"
+                                >Privacy Statement</a
+                            ></label
+                        >
+                        <div class="slds-var-m-top_small nextbutton">
+                            <lightning-button
+                                label="Next"
+                                variant="brand"
+                                onclick={handleSendOtp}
+                                disabled={disableform1}
+                            >
+                            </lightning-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <template if:true={captureOtp}>
+            <div class="slds-p-around_medium slds-text-heading_medium">
+                <h2>
+                    OTP has been sent to your company email address.Please
+                    verify
+                </h2>
+            </div>
+            <div class="slds-grid slds-grid_align-center slds-text-align_left">
+                <div
+                    class="
+                        slds-form-element__control
+                        slds-var-m-bottom_small
+                        slds-size_2-of-5
+                    "
+                >
+                    <lightning-input
+                        name="text"
+                        required="true"
+                        label="Enter 6 digit OTP"
+                        onchange={handleOtpChange}
+                        class="otpField"
+                    >
+                    </lightning-input>
+                    <div class="slds-var-m-top_small">
+                        <lightning-button
+                            label="Verify OTP"
+                            variant="brand"
+                            onclick={handleVerifyOtp}
+                        >
+                        </lightning-button>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template if:true={showContent}>
+            <div class="slds-p-around_medium">
+                <div
+                    class="
+                        slds-text-align_center
+                        slds-m-top_x-large
+                        slds-m-bottom_x-large
+                        slds-text-heading_medium
+                    "
+                >
+                    <b
+                        >Thanks for registering!<br />Content would be live on
+                        5th July</b
+                    >
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

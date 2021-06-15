@@ -1,0 +1,55 @@
+.hero--light {
+    background-color: #effafb;
+    color: black;
+}
+
+.hero {
+    padding: 0 8px;
+}
+
+.content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1280px;
+    min-height: 350px;
+}
+
+.content-start {
+    display: flex;
+    flex-direction: column;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    padding-right: 24px;
+    width: 45%;
+    min-width: 350px;
+}
+
+.title {
+    font-family: 'Neutraface';
+    font-size: 40px;
+    line-height: 1;
+    white-space: pre-line;
+}
+
+.subtitle {
+    line-height: 1.5;
+    margin: 8px 0;
+    font-size: 20px;
+}
+
+.content-end--bottom {
+    align-self: flex-end;
+    margin-top: 32px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    max-height: 300px;
+}
+
+.newColor {
+    color: #5d5d5d;
+}
