@@ -75,8 +75,8 @@ app.get(/^(?!\/api).+/, (req, res) => {
 
 // Expose API endpoints for Salesforce Integration
 app.get('/api/register', function (req, res) {
-    const { email, company, thEmail, chkbx } = req.query;
-    const url = `/leadData/register?email=${email}&company=${company}&thEmail=${thEmail}&chkbx=${chkbx}`;
+    const { name, email, technology, company, thEmail, chkbx } = req.query;
+    const url = `/leadData/register?name=${name}&email=${email}&company=${company}&technology=${technology}&thEmail=${thEmail}&chkbx=${chkbx}`;
     restUtilsObj.doApexGet(url, req, res);
 });
 

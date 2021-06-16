@@ -14,6 +14,8 @@ export default class Registration extends LightningElement {
     optFieldDisabled;
     showForm = true;
     chkbx;
+    name;
+    technology;
 
     handleEmailChange(event) {
         this.email = event.target.value;
@@ -45,6 +47,12 @@ export default class Registration extends LightningElement {
     }
     handleCheckboxChange(event) {
         this.chkbx = event.target.checked;
+    }
+    handleTechnologyChange(event) {
+        this.technology = event.target.value;
+    }
+    handleNameChange(event) {
+        this.name = event.target.value;
     }
     get options() {
         return [
@@ -82,15 +90,24 @@ export default class Registration extends LightningElement {
         }
 
         const checkboxElement = this.template.querySelectorAll('input')[0];
-        if (!checkboxElement.checkValidity()) {        
+        if (!checkboxElement.checkValidity()) {
             checkboxElement.reportValidity();
             isvalid = false;
         }
-        if (isvalid && this.email) {
+        if (
+            isvalid &&
+            this.name &&
+            this.email &&
+            this.company &&
+            this.technology &&
+            this.thEmail
+        ) {
             this.disableform1 = true;
 
             getData('/api/register', {
+                name: this.name,
                 email: this.email,
+                technology: this.technology,
                 company: this.company,
                 thEmail: this.thEmail,
                 chkbx: this.chkbx
