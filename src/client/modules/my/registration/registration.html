@@ -31,6 +31,17 @@
                         "
                     >
                         <lightning-input
+                            type="text"
+                            name="lastname"
+                            required="true"
+                            label="Enter your Name"
+                            onchange={handleNameChange}
+                            disabled={disableform1}
+                            class="slds-p-bottom_small"
+                        >
+                        </lightning-input>
+
+                        <lightning-input
                             type="email"
                             name="email"
                             required="true"
@@ -40,6 +51,18 @@
                             class="slds-p-bottom_small"
                         >
                         </lightning-input>
+
+                        <lightning-input
+                            type="text"
+                            name="technology"
+                            required="true"
+                            label="Enter the current technology you are working on"
+                            onchange={handleTechnologyChange}
+                            disabled={disableform1}
+                            class="slds-p-bottom_small"
+                        >
+                        </lightning-input>
+
                         <lightning-combobox
                             name="company"
                             label="Choose your company"
