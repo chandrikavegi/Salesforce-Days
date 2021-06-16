@@ -20,7 +20,7 @@ export default class Registration extends LightningElement {
     handleEmailChange(event) {
         this.email = event.target.value;
         const emailElement =
-            this.template.querySelectorAll('lightning-input')[0];
+            this.template.querySelectorAll('lightning-input')[1];
         emailElement.setCustomValidity('');
         emailElement.reportValidity();
         let emailValue = emailElement.value;
