@@ -1,5 +1,8 @@
 <template>
     <div class="wrapper">
+        <template if:true={error}>
+            <my-error-panel errors={error}></my-error-panel>
+        </template>
         <template if:true={showForm}>
             <div class="slds-p-around_small">
                 <div
@@ -64,17 +67,15 @@
                             for="terms"
                             style="display: inline"
                             class="slds-form-element__label"
-                        >
-                            By registering, you confirm that you agree to the
-                            <a
+                        > By registering, you confirm that you agree to the 
+                             <a
                                 href="https://trailblazer.me/resource/documents/documents/pdf/TermsOfUse_en_US.pdf"
-                            >
-                                Salesforce Program Agreement </a
+                             >  Salesforce Program Agreement </a
                             >and Be A Salesforce Developer Terms. Salesforce
-                            values your privacy. See our
+                            values your privacy. See our 
                             <a
                                 href="https://www.salesforce.com/company/privacy/full_privacy/"
-                                >Privacy Statement</a
+                                > Privacy Statement</a
                             ></label
                         >
                         <div class="slds-var-m-top_small nextbutton">

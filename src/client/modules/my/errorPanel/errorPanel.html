@@ -1,0 +1,11 @@
+<template>
+    <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+        <span class="slds-assistive-text">error</span>
+        <h2>An error occurred: </h2>
+        <template if:true={errorMessages.length}>
+            <template for:each={errorMessages} for:item="message">
+                <p class="slds-text-body_regular" key={message}>{message}</p>
+            </template>
+        </template>
+    </div>
+</template>

@@ -45,7 +45,6 @@ export default class Registration extends LightningElement {
     }
     handleCheckboxChange(event) {
         this.chkbx = event.target.checked;
-        console.log(this.chkbx + 'chknx');
     }
     get options() {
         return [
@@ -75,7 +74,7 @@ export default class Registration extends LightningElement {
         let isvalid = true;
         const emailElement =
             this.template.querySelectorAll('lightning-input')[0];
-        let emailValue = emailElement.value;
+        //let emailValue = emailElement.value;
 
         if (!emailElement.checkValidity()) {
             emailElement.reportValidity();
@@ -83,7 +82,7 @@ export default class Registration extends LightningElement {
         }
 
         const checkboxElement = this.template.querySelectorAll('input')[0];
-        if (!checkboxElement.checkValidity()) {
+        if (!checkboxElement.checkValidity()) {        
             checkboxElement.reportValidity();
             isvalid = false;
         }
