@@ -67,7 +67,7 @@
                             for="terms"
                             style="display: inline"
                             class="slds-form-element__label"
-                        > By registering, you confirm that you agree to the 
+                        > By clicking Next, you confirm that you agree to the 
                              <a
                                 href="https://trailblazer.me/resource/documents/documents/pdf/TermsOfUse_en_US.pdf"
                              >  Salesforce Program Agreement </a
@@ -94,7 +94,7 @@
         <template if:true={captureOtp}>
             <div class="slds-p-around_medium slds-text-heading_medium">
                 <h2>
-                    OTP has been sent to your company email address.Please
+                    An OTP has been sent to your company email address. Please
                     verify
                 </h2>
             </div>
@@ -103,7 +103,8 @@
                     class="
                         slds-form-element__control
                         slds-var-m-bottom_small
-                        slds-size_2-of-5
+                        slds-size_1-of-1 slds-large-size_1-of-3
+                        slds-p-around_small
                     "
                 >
                     <lightning-input
@@ -136,10 +137,8 @@
                         slds-text-heading_medium
                     "
                 >
-                    <b
-                        >Thanks for registering!<br />Content would be live on
-                        5th July</b
-                    >
+                    <b>Content will be live on 5th July</b><br/><br/>
+                    Come back to this page on 5th July to view the content. You need not enter your details or OTP again, as long as you're using the same browser.
                 </div>
             </div>
         </template>
