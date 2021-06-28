@@ -65,6 +65,7 @@ export default class Registration extends LightningElement {
             { label: 'IBM', value: 'IBM' },
             { label: 'Infosys', value: 'Infosys' },
             { label: 'Larsen and Toubro', value: 'Larsen and Toubro' },
+            { label: 'Magnet360', value: 'Magnet360' },
             { label: 'Mindtree', value: 'Mindtree' },
             { label: 'Persistent Systems', value: 'Persistent Systems' },
             { label: 'PWC', value: 'PWC' },
