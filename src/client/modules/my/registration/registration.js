@@ -81,7 +81,7 @@ export default class Registration extends LightningElement {
     handleSendOtp() {
         let isvalid = true;
         const emailElement =
-            this.template.querySelectorAll('lightning-input')[0];
+            this.template.querySelectorAll('lightning-input')[1];
         //let emailValue = emailElement.value;
 
         if (!emailElement.checkValidity()) {
