@@ -6,7 +6,7 @@ export default class AllWeeks extends LightningElement {
             'https://trailhead.salesforce.com/users/journeytosalesforce/trailmixes/salesforce-days-data-modeling',
         contentLinks: [
             {
-                title: "Data Modeling - Quick Start",
+                title: "Quick Start - Data Modeling",
                 url:
                     'https://www.youtube.com/watch?v=HwynYpstnOM&list=PLgIMQe2PKPSK1ZL2mUjPv3gSrst9EmEBB&index=2',
                 type:
