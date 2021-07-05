@@ -101,7 +101,8 @@ export default class Registration extends LightningElement {
             this.email &&
             this.company &&
             this.technology &&
-            this.thEmail
+            this.thEmail &&
+            this.chkbx
         ) {
             this.disableform1 = true;
 

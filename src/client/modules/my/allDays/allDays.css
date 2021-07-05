@@ -1,0 +1,9 @@
+.wrapper {
+    background: #effafb;
+}
+
+@media (min-width: 1382px) {
+    .slds-large-size_1-of-3 {
+        width: 25%;
+    }
+}

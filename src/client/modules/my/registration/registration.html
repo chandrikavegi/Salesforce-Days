@@ -12,7 +12,7 @@
                         slds-text-align_center
                         slds-text-heading_large
                     "
-                >
+                > 
                     <b>Enter your details to view content</b>
                 </div>
                 <div
@@ -123,9 +123,9 @@
                             </lightning-button>
                         </div>
                     </div>
+                    </div>
                 </div>
-            </div>
-        </template>
+            </template>
         <template if:true={captureOtp}>
             <div class="slds-p-around_medium slds-text-heading_medium">
                 <h2>
@@ -162,21 +162,10 @@
                 </div>
             </div>
         </template>
-
         <template if:true={showContent}>
-            <div class="slds-p-around_medium">
-                <div
-                    class="
-                        slds-text-align_center
-                        slds-m-top_x-large
-                        slds-m-bottom_x-large
-                        slds-text-heading_medium
-                    "
-                >
-                    <b>Content will be live on 5th July</b><br /><br />
-                    Come back to this page on 5th July to view the content. You
-                    need not enter your details or OTP again, as long as you're
-                    using the same browser.
+            <div class="slds-p-around_small">
+                <div>
+                    <my-all-days></my-all-days>
                 </div>
             </div>
         </template>
