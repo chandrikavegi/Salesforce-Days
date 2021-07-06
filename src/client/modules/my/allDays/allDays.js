@@ -44,14 +44,14 @@ export default class AllWeeks extends LightningElement {
 
     @track day3Content = {
         tmUrl:
-            'https://trailhead.salesforce.com/users/shashforce/trailmixes/level-up-sf-dev-apex-enhancements?utm_source=week-button&utm_medium=heroku-app',
+            'https://trailhead.salesforce.com/users/journeytosalesforce/trailmixes/salesforce-days-automation-with-clicks',
         contentLinks: [
             {
-                title: 'Intro to Apex Finalizers',
+                title: 'Quick Start - Automation with Clicks',
                 url:
-                    'https://developer.salesforce.com/blogs/2020/01/learn-moar-in-spring-20-introducing-transaction-finalizers.html?utm_source=levelupsfdev&utm_medium=heroku-app',
+                    'https://www.youtube.com/watch?v=-Lc_5XzYkXw&list=PLgIMQe2PKPSK1ZL2mUjPv3gSrst9EmEBB',
                 type:
-                    '/resources/icons/utility-sprite/svg/symbols.svg#description'
+                    '/resources/icons/utility-sprite/svg/symbols.svg#video'
             },
             {
                 title: 'Automate Business Processes for a Recruiting App',
