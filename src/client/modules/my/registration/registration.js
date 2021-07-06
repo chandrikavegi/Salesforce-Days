@@ -161,10 +161,8 @@ export default class Registration extends LightningElement {
         }
     }
     renderedCallback() {
-        let leadId = localStorage.getItem('Sfdays_leadId');
-        if (leadId != null) {
             this.showContent = true;
             this.showForm = false;
         }
-    }
+    
 }

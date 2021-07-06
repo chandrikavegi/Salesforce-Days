@@ -24,12 +24,12 @@ export default class AllWeeks extends LightningElement {
 
     @track day2Content = {
         tmUrl:
-            'https://trailhead.salesforce.com/users/shashforce/trailmixes/level-up-sf-dev-code-samples?utm_source=week-button&utm_medium=heroku-app',
+            'https://trailhead.salesforce.com/users/journeytosalesforce/trailmixes/salesforce-days-customize-user-experience-with-clicks',
         contentLinks: [
             {
-                title: 'Watch Live webinar about Sample Apps',
+                title: 'Customize User Experience with Clicks',
                 url:
-                    'https://developer.salesforce.com/event/salesforce-developers-reference-code-sample-apps-gallery?utm_source=levelupsfdev&utm_medium=heroku-app',
+                    'https://youtu.be/gdJZXsZu8Q4',
                 type: '/resources/icons/utility-sprite/svg/symbols.svg#video'
             },
             {
