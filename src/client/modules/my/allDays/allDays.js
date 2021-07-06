@@ -29,7 +29,7 @@ export default class AllWeeks extends LightningElement {
             {
                 title: 'Customize User Experience with Clicks',
                 url:
-                    'https://youtu.be/gdJZXsZu8Q4',
+                    'https://www.youtube.com/watch?v=gdJZXsZu8Q4&list=PLgIMQe2PKPSK1ZL2mUjPv3gSrst9EmEBB',
                 type: '/resources/icons/utility-sprite/svg/symbols.svg#video'
             },
             {
