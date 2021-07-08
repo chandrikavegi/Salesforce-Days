@@ -75,11 +75,11 @@ export default class AllWeeks extends LightningElement {
 
     @track day4Content = {
         tmUrl:
-            'https://trailhead.salesforce.com/users/shashforce/trailmixes/level-up-sf-dev-low-code-development?utm_source=week-button&utm_medium=heroku-app',
+            'https://trailhead.salesforce.com/users/journeytosalesforce/trailmixes/salesforce-days-lightning-web-components-and-apex',
         contentLinks: [
             {
-                title: 'Build with Low Code',
-                url: 'https://www.youtube.com/watch?v=NE2hcz3PiMc',
+                title: 'Apex and Lightning Web Components',
+                url: 'https://www.youtube.com/watch?v=4_hTUXv73jo&list=PLgIMQe2PKPSK1ZL2mUjPv3gSrst9EmEBB',
                 type: '/resources/icons/utility-sprite/svg/symbols.svg#video'
             },
             {
