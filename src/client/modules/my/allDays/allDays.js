@@ -98,11 +98,11 @@ export default class AllWeeks extends LightningElement {
 
     @track day5Content = {
         tmUrl:
-            'https://trailhead.salesforce.com/en/users/shashforce/trailmixes/level-up-sf-dev-accessibility?utm_source=week-button&utm_medium=heroku-app',
+            'https://trailhead.salesforce.com/en/users/journeytosalesforce/trailmixes/salesforce-days-security',
         contentLinks: [
             {
-                title: 'Driving equality through Accessibility',
-                url: 'https://www.youtube.com/watch?v=-P4enhWB-Y8',
+                title: 'Security in Salesforce',
+                url: 'https://www.youtube.com/watch?v=wxy_x1FL9VE&list=PLgIMQe2PKPSK1ZL2mUjPv3gSrst9EmEBB&index=6',
                 type: '/resources/icons/utility-sprite/svg/symbols.svg#video'
             },
             {
