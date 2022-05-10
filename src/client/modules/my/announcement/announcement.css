@@ -1,0 +1,68 @@
+
+.title {
+    font-family: 'Neutraface';
+    font-size: 40px;
+    line-height: 1;
+    white-space: pre-line;
+    color: white;
+}
+.hero--light {
+    background-color: #effafb;
+    color: black;
+}
+
+.hero {
+    padding: 0 8px;
+    background-color:#032D60;
+    position:relative;
+    height: 100vh;
+}
+
+.content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1280px;
+    min-height: 350px;
+}
+
+.content-start {
+    display: flex;
+    flex-direction: column;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    width: 100%;
+    min-width: 350px;
+}
+
+.title {
+    font-family: 'Neutraface';
+    font-size: 40px;
+    line-height: 1;
+    white-space: pre-line;
+    color: white;
+
+}
+
+.subtitle {
+    line-height: 1.5;
+    margin: 8px 0;
+    font-size: 15px;
+    color: white;
+
+}
+
+.content-end--bottom {
+    align-self: center;
+}
+
+img {
+    max-width: 100%;
+    max-height: 400px;
+}
+
+.newColor {
+    color: #5d5d5d;
+}
+
