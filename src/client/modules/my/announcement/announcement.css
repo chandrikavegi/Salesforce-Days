@@ -36,15 +36,6 @@
     min-width: 350px;
 }
 
-.title {
-    font-family: 'Neutraface';
-    font-size: 40px;
-    line-height: 1;
-    white-space: pre-line;
-    color: white;
-
-}
-
 .subtitle {
     line-height: 1.5;
     margin: 8px 0;
