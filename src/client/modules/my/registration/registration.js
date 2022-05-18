@@ -18,55 +18,63 @@ export default class Registration extends LightningElement {
     technology;
     showTabTwo = true;
 
+    showSpinner = false;
+    attendeeName;
+
+    connectedCallback(){
+        const attendeeId = localStorage.getItem("attendeeId_22");
+        const attendeeName = localStorage.getItem("attendeeName_22");
+        if(attendeeId && attendeeName){
+            this.attendeeName = attendeeName;
+            this.showContent = true;
+        }
+    }
+
     handleEmailChange(event) {
         this.email = event.target.value;
-        const emailElement =
-            this.template.querySelectorAll('lightning-input')[1];
-        emailElement.setCustomValidity('');
-        emailElement.reportValidity();
     }
+
     handleNameChange(event) {
         this.name = event.target.value;
     }
 
     handleRegister() {
         let isvalid = true;
-        this.error ='';
+        this.error = '';
         const emailElement =
             this.template.querySelectorAll('lightning-input')[1];
-        //let emailValue = emailElement.value;
-        console.log('handle register');
         if (!emailElement.checkValidity()) {
             emailElement.reportValidity();
             isvalid = false;
         }
 
-        const checkboxElement = this.template.querySelectorAll('lightning-input')[0];
+        const checkboxElement =
+            this.template.querySelectorAll('lightning-input')[0];
         if (!checkboxElement.checkValidity()) {
             checkboxElement.reportValidity();
             isvalid = false;
         }
-        if (
-            isvalid &&
-            this.name &&
-            this.email
-        ) {
-
+        if (isvalid && this.name && this.email) {
+            this.showSpinner = true;
             getData('/api/register', {
                 name: this.name,
-                email: this.email,
+                email: this.email
             })
                 .then((result) => {
                     this.leadId = result;
                     this.showForm = false;
                     this.showContent = true;
+                    localStorage.setItem("attendeeId_22", this.leadId);
+                    localStorage.setItem("attendeeName_22", this.name);
+                    this.attendeeName = this.name;
                 })
                 .catch((error) => {
                     console.log(error);
                     this.error = error;
+                })
+                .finally(() => {
+                    this.showSpinner = false;
                 });
         }
     }
-
-    
 }

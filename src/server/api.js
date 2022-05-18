@@ -75,23 +75,33 @@ app.get(/^(?!\/api).+/, (req, res) => {
 
 // Expose API endpoints for Salesforce Integration
 app.get('/api/register', function (req, res) {
-    const { name, email} = req.query;
-    var validDomains = [ "ibm.com","accenture.com","pwc.com","techmahindra.com","capgemini.com","cognizant.com","wipro.com","hcl.com","tcs.com","deloitte.com","mindtree.com","persistent.com","infosys.com", ];
-    var domain = email.split('@')[1];
+    const { name, email } = req.query;
+    const validDomains = [
+        'ibm.com',
+        'accenture.com',
+        'pwc.com',
+        'techmahindra.com',
+        'capgemini.com',
+        'cognizant.com',
+        'wipro.com',
+        'hcl.com',
+        'tcs.com',
+        'deloitte.com',
+        'mindtree.com',
+        'persistent.com',
+        'infosys.com'
+    ];
+    const domain = email.split('@')[1];
     if (validDomains.includes(domain)) {
-        const url = `/leadData/register?name=${name}&email=${email}`;
-    restUtilsObj.doApexGet(url, req, res);
-    } 
-    else{
-        res.status(450).json({ message: 'Invalid Email'});
+        const url = `/leadData/register?name=${encodeURIComponent(
+            name
+        )}&email=${email}`;
+        restUtilsObj.doApexGet(url, req, res);
+    } else {
+        res.statusMessage =
+            'Invalid email address: Your organization is not a part of Salesforce Days';
+        res.status(400).send();
     }
-    
-});
-
-app.get('/api/verifyOTP', function (req, res) {
-    const { leadId, otp } = req.query;
-    const url = `/leadData/verifyOTP?leadId=${leadId}&otp=${otp}`;
-    restUtilsObj.doApexGet(url, req, res);
 });
 
 app.listen(PORT, () =>

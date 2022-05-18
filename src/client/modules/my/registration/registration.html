@@ -3,17 +3,20 @@
         <template if:true={error}>
             <my-error-panel errors={error}></my-error-panel>
         </template>
-        <template if:true={showForm}>
+        <template if:true={showSpinner}>
+            <utils-spinner></utils-spinner>
+        </template>
+        <template if:false={showContent}>
             <div class="slds-p-around_small">
                 <div
                     class="
                         slds-m-top_medium
                         slds-m-bottom_x-large
                         slds-text-align_center
-                        slds-text-heading_large 
+                        slds-text-heading_large
                         title
                     "
-                > 
+                >
                     <b>Get Started Now</b>
                 </div>
                 <div
@@ -58,13 +61,13 @@
                             style="display: inline"
                             class="slds-form-element__label"
                         >
-                            &nbsp;By clicking, you confirm that you agree
-                            to the &nbsp;
+                            &nbsp;By clicking, you confirm that you agree to the
+                            &nbsp;
                             <a
                                 href="https://org62.my.salesforce.com/sfc/p/000000000062/a/3y0000003UNW/sawXbb.Z5ithz0faEREN35SNWTf8Fqy.lZb8rNHEctc"
                                 >Program terms</a
-                            >. </label
-                        >
+                            >.
+                        </label>
                         <div class="slds-var-m-top_small slds-m-bottom_x-large">
                             <lightning-button
                                 label="Get Started"
@@ -75,9 +78,9 @@
                             </lightning-button>
                         </div>
                     </div>
-                    </div>
                 </div>
-            </template>
+            </div>
+        </template>
         <template if:true={showContent}>
             <div class="slds-p-around_x-large content">
                 <div
@@ -88,9 +91,17 @@
                         slds-text-heading_medium
                     "
                 >
-                <b
-                >Thanks for registering!&nbsp;Content will be live soon</b>
-            </div>
+                    <b>Thanks for registering, {attendeeName}!</b>
+                    <br /><br />
+                    <div>
+                        Join us, starting June 1st 2022 to July 9 2022, for a
+                        learning experience as we study the fundamentals of
+                        Salesforce and then dive into advanced concepts through
+                        Supersets and Superbadges!
+                    </div>
+                    <br /><br />
+                    <b>Bookmark and come back to this page on 1st June. </b>
+                </div>
             </div>
         </template>
     </div>

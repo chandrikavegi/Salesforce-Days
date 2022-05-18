@@ -6,9 +6,7 @@
             >
                 <div class="slds-media__figure"></div>
                 <div class="slds-p-bottom_medium slds-media__body dayBody">
-                    <h2 class="slds-card__header-title">
-                        {theme}
-                    </h2>
+                    <h2 class="slds-card__header-title">{theme}</h2>
                 </div>
             </header>
         </div>
@@ -25,21 +23,28 @@
                 <template if:true={content}>
                     <div
                         class="slds-text-body_regular"
-                        style="line-height: 10px;"
+                        style="line-height: 10px"
                     >
-                        <iframe src={content.tmUrl}
-                            width="225" height="200"
+                        <iframe
+                            src={content.tmUrl}
+                            width="225"
+                            height="200"
                             loading="lazy"
-                            frameborder="0">
+                            frameborder="0"
+                        >
                         </iframe>
                     </div>
                     <div>
-                       
                         <template for:each={content.contentLinks} for:item="c">
                             <span key={c.url}>
                                 <a href={c.url} target="_blank">
-                                    <img  src ={c.type} height="100" width = "100" class = "icon"/>
-                                 </a>
+                                    <img
+                                        src={c.type}
+                                        height="100"
+                                        width="100"
+                                        class="icon"
+                                    />
+                                </a>
                             </span>
                         </template>
                     </div>

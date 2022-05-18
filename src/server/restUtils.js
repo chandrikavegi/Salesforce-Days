@@ -13,7 +13,8 @@ module.exports = class RestUtils {
                 if (responseJson.isSuccess) {
                     res.json(responseJson.data);
                 } else {
-                    res.status(400).json({ message: responseJson.errorMsg });
+                    res.statusMessage = responseJson.errorMsg;
+                    res.status(400).send();
                 }
             }
         });

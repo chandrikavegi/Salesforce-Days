@@ -1,11 +1,11 @@
 .wrapper {
     background: #ffffff;
-    min-height: 220px;
+    min-height: 460px;
 }
 .title {
-    font-family: 'TrailheadMedium_112816';
+    font-family: 'ITCAvantGardePro-Demi';
     padding-top: 18px;
-    color:#032D60;
+    color: #032d60;
 }
 .combo {
     background: #ffffff;

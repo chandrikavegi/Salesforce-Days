@@ -34,10 +34,6 @@ async function getData(url = '', params = {}) {
     });
 
     if (!response.ok) {
-        if(response.status === 450){
-            throw Error('Invalid Email');
-        }
-
         throw Error(response.statusText);
     }
     return response.json(); // parses JSON response into native JavaScript objects
