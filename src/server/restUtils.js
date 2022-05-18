@@ -6,6 +6,7 @@ module.exports = class RestUtils {
     doApexGet(url, req, res) {
         this.sfdc.apex.get(url, (err, apexResponse) => {
             if (err) {
+                console.log('error');
                 res.status(500).send(err);
             } else {
                 let responseJson = JSON.parse(apexResponse);

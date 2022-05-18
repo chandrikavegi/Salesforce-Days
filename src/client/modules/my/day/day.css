@@ -1,5 +1,5 @@
 .dayBanner {
-    background: #011a6a;
+    background: #032D60;
     color: white;
     text-align: center;
 }
@@ -11,15 +11,19 @@
 
 .dayBody {
     line-height: 2;
+    min-height: 55px;
+
 }
 
 .slds-card {
-    min-width: 275px;
+    max-width: 275px;
     margin-bottom: 1rem;
+    background: #acbed4;
+
 }
 
 .consistent-height {
-    min-height: 250px;
+    min-height: 280px;
     text-align: left;
 }
 
@@ -41,4 +45,7 @@
 
 .icon-margin {
     margin-right: 5px;
+}
+.icon{
+    padding: 10px;
 }

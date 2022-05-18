@@ -1,9 +1,11 @@
 .wrapper {
-    background: #effafb;
+    background: #ffffff;
     min-height: 220px;
 }
 .title {
-    padding-top: 28px;
+    font-family: 'TrailheadMedium_112816';
+    padding-top: 18px;
+    color:#032D60;
 }
 .combo {
     background: #ffffff;
@@ -14,4 +16,9 @@
 .terms-conditions {
     font-size: 10px;
     text-align: left;
+}
+.content {
+    min-height: 400px;
+    background-size: cover;
+    font-family: 'SalesforceSans-Regular';
 }

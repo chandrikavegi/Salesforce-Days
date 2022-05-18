@@ -75,9 +75,17 @@ app.get(/^(?!\/api).+/, (req, res) => {
 
 // Expose API endpoints for Salesforce Integration
 app.get('/api/register', function (req, res) {
-    const { name, email, technology, company, thEmail, chkbx } = req.query;
-    const url = `/leadData/register?name=${name}&email=${email}&company=${company}&technology=${technology}&thEmail=${thEmail}&chkbx=${chkbx}`;
+    const { name, email} = req.query;
+    var validDomains = [ "ibm.com","accenture.com","pwc.com","techmahindra.com","capgemini.com","cognizant.com","wipro.com","hcl.com","tcs.com","deloitte.com","mindtree.com","persistent.com","infosys.com", ];
+    var domain = email.split('@')[1];
+    if (validDomains.includes(domain)) {
+        const url = `/leadData/register?name=${name}&email=${email}`;
     restUtilsObj.doApexGet(url, req, res);
+    } 
+    else{
+        res.status(450).json({ message: 'Invalid Email'});
+    }
+    
 });
 
 app.get('/api/verifyOTP', function (req, res) {

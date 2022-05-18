@@ -10,10 +10,11 @@
                         slds-m-top_medium
                         slds-m-bottom_x-large
                         slds-text-align_center
-                        slds-text-heading_large
+                        slds-text-heading_large 
+                        title
                     "
                 > 
-                    <b>Enter your details to view content</b>
+                    <b>Get Started Now</b>
                 </div>
                 <div
                     class="
@@ -32,9 +33,9 @@
                     >
                         <lightning-input
                             type="text"
-                            name="lastname"
+                            name="fullname"
                             required="true"
-                            label="Enter your Name"
+                            label="Name"
                             onchange={handleNameChange}
                             disabled={disableform1}
                             class="slds-p-bottom_small"
@@ -45,79 +46,30 @@
                             type="email"
                             name="email"
                             required="true"
-                            label="Enter your company email"
+                            label="Email Address"
                             onchange={handleEmailChange}
                             disabled={disableform1}
                             class="slds-p-bottom_small"
                         >
                         </lightning-input>
 
-                        <lightning-input
-                            type="text"
-                            name="technology"
-                            required="true"
-                            label="Enter the current technology you are working on"
-                            onchange={handleTechnologyChange}
-                            disabled={disableform1}
-                            class="slds-p-bottom_small"
-                        >
-                        </lightning-input>
-
-                        <lightning-combobox
-                            name="company"
-                            label="Choose your company"
-                            required="true"
-                            options={options}
-                            onchange={handleCompanyChange}
-                            class="slds-p-bottom_small"
-                        ></lightning-combobox>
-                        <lightning-input
-                            type="email"
-                            name="email"
-                            required="true"
-                            label="Enter your Trailhead email"
-                            onchange={handleThEmailChange}
-                            disabled={disableform1}
-                            class="slds-p-bottom_small"
-                        >
-                        </lightning-input>
-                        <p class="slds-p-bottom_small">
-                            New to Trailhead?&nbsp;
-                            <a
-                                href="https://trailblazer.me/TrailblazerLogin?display=page&mode=signup&sdtd=1&startURL=%2Fsetup%2Fsecur%2FRemoteAccessAuthorizationPage.apexp%3Fsource%3DCAAAAXoaO6FzMDAwMDAwMDAwMDAwMDAwAAAA6FLIJ6oRTpLBzCbGnhcjOWV15foHJPvVyTYG47kZSZDh5y56EVFpBB-Kiy4OV0Ifvsx9q1vSgAUre3JZGA2eCPQs4SVFhDSStubvgW2eqDPaLPzelzBb-jrTaXvE0J1xedWg_cfNLp7Oa4YvumTECUTV8oT5_xL4f4cAx9qSOOYQ8i2Q3-LGYnSQPxV-Yglh2_924H6dGtVcLtLmM3eIoaagaKF-_Dq-c6ld5tb1252JzgED4zeOwPE3YWmi69sN407hTgeIf2BXEu3PtVRNRCLJGIhqRI2DBRMVpQ0EdhxSw8qGDIL8bbogy5-0U_6gqIedcpFhwhmFQySoXeGTtWQi5awXsbpCzxyfAwyF-kNqq5SyULfp9rQc8kq9uMUhNwuQ3zgVHLq-sxBhL7P6gkim1dadpN9okfozuN2e7JNy-fTPJJqLASfgaWR3-Kv_cpLfeJoWnXQGrgxqXJQ5aVkEjhKCRk5jOfmGq-Nrb1w7FN4-MFDjkbAjwz8fC3ucnSGYoGih3ndnXMZjUelrthtEbMWT1ri3pGxKgW_lqMbWDZu0Mbco7aym_U_oa2gfwgKBSPqxg4Qex23I5rdZiG1JyQSP14ORak-_i50SOR5SAweqP91cBt9yxoIc1TsKQ-OtD9Sa-llqt8pZuko8YpVYY_pcO09MhXfID0-95Wd88l2I1n12HVLmbQW7HOZejNWXuWbvpoBzvDgd18iQ3pjsgrBSseNGqiOnre2xESejdqi-laSg9endR7aOQozGozV4obmi5Z6HkfvdXWyQriI%253D%26display%3Dpage"
-                                target="_blank"
-                                >Signup</a
-                            >&nbsp;for free
-                        </p>
-                        <input
-                            type="checkbox"
-                            disabled={disableform1}
-                            name="consent"
-                            onchange={handleCheckboxChange}
-                            required="required"
-                        />
                         <label
                             for="terms"
                             style="display: inline"
                             class="slds-form-element__label"
                         >
-                            &nbsp;By clicking Next, you confirm that you agree
+                            &nbsp;By clicking, you confirm that you agree
                             to the &nbsp;
                             <a
                                 href="https://org62.my.salesforce.com/sfc/p/000000000062/a/3y0000003UNW/sawXbb.Z5ithz0faEREN35SNWTf8Fqy.lZb8rNHEctc"
-                                >Be A Salesforce <br />Developer Terms</a
-                            >. Salesforce values your privacy. See our
-                            <a
-                                href="https://www.salesforce.com/company/privacy/full_privacy/"
-                            >
-                                &nbsp;Privacy Statement</a
-                            ></label
+                                >Program terms</a
+                            >. </label
                         >
-                        <div class="slds-var-m-top_small nextbutton">
+                        <div class="slds-var-m-top_small slds-m-bottom_x-large">
                             <lightning-button
-                                label="Next"
+                                label="Get Started"
                                 variant="brand"
-                                onclick={handleSendOtp}
+                                onclick={handleRegister}
                                 disabled={disableform1}
                             >
                             </lightning-button>
@@ -126,50 +78,19 @@
                     </div>
                 </div>
             </template>
-        <template if:true={captureOtp}>
-            <div class="slds-p-around_medium slds-text-heading_medium">
-                <h2>
-                    An OTP has been sent to your company email address. Please
-                    verify
-                </h2>
-            </div>
-            <div class="slds-grid slds-grid_align-center slds-text-align_left">
+        <template if:true={showContent}>
+            <div class="slds-p-around_x-large content">
                 <div
                     class="
-                        slds-form-element__control
-                        slds-var-m-bottom_small
-                        slds-size_1-of-1
-                        slds-large-size_1-of-3
-                        slds-p-around_small
+                        slds-text-align_center
+                        slds-m-top_x-large
+                        slds-m-aound_xx-large
+                        slds-text-heading_medium
                     "
                 >
-                    <lightning-input
-                        name="text"
-                        required="true"
-                        label="Enter 6 digit OTP"
-                        onchange={handleOtpChange}
-                        class="otpField"
-                    >
-                    </lightning-input>
-                    <div class="slds-var-m-top_small">
-                        <lightning-button
-                            label="Verify OTP"
-                            variant="brand"
-                            onclick={handleVerifyOtp}
-                        >
-                        </lightning-button>
-                    </div>
-                </div>
+                <b
+                >Thanks for registering!<br />Content will be live soon</b>
             </div>
-        </template>
-        <template if:true={showContent}>
-            <div class="slds-p-around_small">
-                <div>
-                    <my-all-days></my-all-days>
-                </div>
-                <div class = "terms-conditions">
-                    *Limited time offer. While supplies last. Open to legal residents of India from Salesforce partner companies who are at least 18 years of age and complete the three steps in the Be a Salesforce Developer challenge starting on July 5th, 2021, to July 26, 2021. Be a Salesforce Developer program is by invitation only, and participants must register with company email. Participants who are Salesforce certified are not eligible for this offer. Government employees, including all federal, state, county, city, or municipal government employees, and K-12 employees are not eligible to participate in this promotion. Limit one (1) per person/Trailhead account. Subject to verification of eligibility and availability. Offer subject to change at any time. Additional terms and restrictions may apply.
-                </div>
             </div>
         </template>
     </div>

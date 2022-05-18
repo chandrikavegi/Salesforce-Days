@@ -15,6 +15,7 @@ async function postData(url = '', data = {}) {
 async function getData(url = '', params = {}) {
     // Default options are marked with *
     let paramString = '';
+    // eslint-disable-next-line guard-for-in
     for (let key in params) {
         if (paramString !== '') {
             paramString += '&';
@@ -33,6 +34,10 @@ async function getData(url = '', params = {}) {
     });
 
     if (!response.ok) {
+        if(response.status === 450){
+            throw Error('Invalid Email');
+        }
+
         throw Error(response.statusText);
     }
     return response.json(); // parses JSON response into native JavaScript objects

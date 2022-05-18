@@ -6,16 +6,13 @@
             >
                 <div class="slds-media__figure"></div>
                 <div class="slds-p-bottom_medium slds-media__body dayBody">
-                    <h2 class="slds-card__header-title title">
-                        Day {dayNumber}
+                    <h2 class="slds-card__header-title">
+                        {theme}
                     </h2>
-                        {dayString}
                 </div>
             </header>
         </div>
         <div class="slds-card__body slds-card__body_inner consistent-height">
-            <div class="slds-text-title_caps">Theme</div>
-            <div class="slds-text-heading_medium"><b>{theme}</b></div>
             <br />
 
             <template if:true={showLock}>
@@ -27,28 +24,22 @@
             <template if:false={showLock}>
                 <template if:true={content}>
                     <div
-                        class="slds-text-title_caps"
-                        style="margin-bottom: 5px;"
-                    >
-                        Content Bites
-                    </div>
-                    <div
                         class="slds-text-body_regular"
-                        style="line-height: 30px;"
+                        style="line-height: 10px;"
                     >
+                        <iframe src={content.tmUrl}
+                            width="225" height="200"
+                            loading="lazy"
+                            frameborder="0">
+                        </iframe>
+                    </div>
+                    <div>
+                       
                         <template for:each={content.contentLinks} for:item="c">
                             <span key={c.url}>
-                                <svg
-                                    class="slds-icon slds-icon-text-default slds-icon_x-small icon-margin"
-                                    aria-hidden="true"
-                                >
-                                    <use xlink:href={c.type}></use>
-                                </svg>
-                                <span class="slds-assistive-text"
-                                    >{c.title}</span
-                                >
-                                <a href={c.url} target="_blank">{c.title}</a>
-                                <br />
+                                <a href={c.url} target="_blank">
+                                    <img  src ={c.type} height="100" width = "100" class = "icon"/>
+                                 </a>
                             </span>
                         </template>
                     </div>
@@ -56,29 +47,6 @@
                 </template>
             </template>
         </div>
-        <footer class="slds-card__footer">
-            <div class="slds-card__footer-action">
-                <template if:false={isLaunch}>
-                    <template if:true={content}>
-                        <a href={content.tmUrl} target="_blank"
-                            ><button class="slds-button slds-button_brand">
-                                Go to Trailmix
-                            </button></a
-                        >
-                    </template>
-                    <template if:false={content}>
-                        <button class="slds-button slds-button_brand">
-                            Go to Trailmix
-                        </button>
-                    </template>
-                </template>
-                <template if:true={isLaunch}>
-                    <button class="slds-button" disabled="disabled">
-                        &nbsp;
-                    </button>
-                </template>
-            </div>
-        </footer>
         <template if:true={showLock}>
             <div class="overlay">
                 <div class="slds-media__body">
