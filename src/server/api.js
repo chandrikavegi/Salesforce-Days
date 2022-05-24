@@ -75,7 +75,7 @@ app.get(/^(?!\/api).+/, (req, res) => {
 
 // Expose API endpoints for Salesforce Integration
 app.get('/api/register', function (req, res) {
-    const { name, email } = req.query;
+    const { name, email, thEmail } = req.query;
     const validDomains = [
         'ibm.com',
         'accenture.com',
@@ -95,13 +95,20 @@ app.get('/api/register', function (req, res) {
     if (validDomains.includes(domain)) {
         const url = `/leadData/register?name=${encodeURIComponent(
             name
-        )}&email=${email}`;
+        )}&email=${email}&thEmail=${thEmail}`;
         restUtilsObj.doApexGet(url, req, res);
     } else {
         res.statusMessage =
             'Invalid email address: Your organization is not a part of Salesforce Days';
         res.status(400).send();
     }
+});
+app.get('/api/updateThEmail', function (req, res) {
+    const { attendeeId, thEmail } = req.query;
+    const url = `/leadData/updateThEmail?attendeeId=${encodeURIComponent(
+        attendeeId
+    )}&thEmail=${thEmail}`;
+    restUtilsObj.doApexGet(url, req, res);
 });
 
 app.listen(PORT, () =>
