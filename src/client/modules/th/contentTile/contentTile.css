@@ -7,6 +7,7 @@
     border-top: var(--tds-spacing-2) solid var(--tds-color-white);
     padding: var(--tds-spacing-6);
     margin-bottom: var(--tds-spacing-6);
+    border-top-color: var(--tds-border-top-color, #90d4c6);
 }
 
 .image-container[data-variant="rounded"] {
