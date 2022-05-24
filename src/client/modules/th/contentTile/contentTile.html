@@ -1,0 +1,34 @@
+<template>
+    <div class="tile" style="border-top-color: #90d4c6;">
+
+        <div class="summary" data-compact="false" data-size="default" data-slots="image meta-left meta-right" data-variant="tile">
+            <div class="header">
+                <div class="header__image">
+                    <a class="image-container" style="--image-size: 64px; --image-padding: 0;" data-variant="rounded" href={badgeUrl} target="_blank">
+                        <img class="image" src={imgUrl} alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="body">
+                <div class="content" data-alignment="start">
+                    <div class="content__pretitle" data-show="true">
+                        <p>{badgeType}</p>
+                    </div>
+                    <div class="content__heading">
+                        <a class="content__title content__title--link" href={badgeUrl} target="_blank">
+                            <slot name="title"></slot>
+                        </a>
+                    </div>
+                    <div class="content__description">
+                        <slot name="description"></slot>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="footer__meta-left">
+                        <div class="meta-left" slot="meta-left"><slot name="points"></slot></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
