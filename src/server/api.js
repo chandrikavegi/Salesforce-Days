@@ -104,7 +104,7 @@ app.get('/api/register', function (req, res) {
     }
 });
 app.get('/api/updateThEmail', function (req, res) {
-    const { attendeeId, thEmail, tshirtSize} = req.query;
+    const { attendeeId, thEmail, tshirtSize } = req.query;
     const url = `/leadData/updateThEmail?attendeeId=${encodeURIComponent(
         attendeeId
     )}&thEmail=${thEmail}&tshirtSize=${tshirtSize}`;

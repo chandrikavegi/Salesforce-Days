@@ -1,51 +1,66 @@
 <template>
     <div class="wrapper">
         <template if:true={showPopup}>
-            <section role="dialog" tabindex="-1" aria-modal="true" aria-label="Modal popup" class="slds-modal slds-backdrop slds-backdrop_open">
-            <div class="slds-modal__container">
-                <div class="slds-modal__header">
-                    <h2 id="modal-heading-01" class="slds-modal__title"> We need some more information to track your progress</h2>
-                  </div>
-                <div class="slds-modal__content slds-p-around_medium">
-                    <div class = "slds-grid slds-grid_align-center
-                    slds-text-align_left ">
-                    <div class="slds-form-element__control
-                            slds-var-m-bottom_small
-                            slds-size_1-of-1
-                            slds-large-size_2-of-3
-                            slds-p-around_small">
-
-                    <lightning-input
-                        type="email"
-                        name="themail"
-                        required="true"
-                        label="Please enter your Trailhead Email Address"
-                        onchange={handlePopupEmailChange}
-                        disabled={disableform1}
-                        class="themail2 slds-p-bottom_small"
-                >
-                </lightning-input>
-                <lightning-combobox
-                        name="T-shirtSize"
-                        label="T-shirt Size"
-                        required="true"
-                        options={options}
-                        onchange={handleSizeChange}
-                        class="size2 slds-p-bottom_small"
-                >
-                </lightning-combobox>
-                <lightning-button
-                                label="Submit"
-                                variant="brand"
-                                onclick={handleSubmit}
-                                disabled={disableform1}
+            <section
+                role="dialog"
+                tabindex="-1"
+                aria-modal="true"
+                aria-label="Modal popup"
+                class="slds-modal slds-backdrop slds-backdrop_open"
+            >
+                <div class="slds-modal__container">
+                    <div class="slds-modal__header">
+                        <h2 id="modal-heading-01" class="slds-modal__title">
+                            We need some more information to track your progress
+                        </h2>
+                    </div>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <div
+                            class="
+                                slds-grid slds-grid_align-center
+                                slds-text-align_left
+                            "
+                        >
+                            <div
+                                class="
+                                    slds-form-element__control
+                                    slds-var-m-bottom_small
+                                    slds-size_1-of-1
+                                    slds-large-size_2-of-3
+                                    slds-p-around_small
+                                "
                             >
-                            </lightning-button>
+                                <lightning-input
+                                    type="email"
+                                    name="themail"
+                                    required="true"
+                                    label="Please enter your Trailhead Email Address"
+                                    onchange={handlePopupEmailChange}
+                                    disabled={disableform1}
+                                    class="themail2 slds-p-bottom_small"
+                                >
+                                </lightning-input>
+                                <lightning-combobox
+                                    name="T-shirtSize"
+                                    label="T-shirt Size"
+                                    required="true"
+                                    options={options}
+                                    onchange={handleSizeChange}
+                                    class="size2 slds-p-bottom_small"
+                                >
+                                </lightning-combobox>
+                                <lightning-button
+                                    label="Submit"
+                                    variant="brand"
+                                    onclick={handleSubmit}
+                                    disabled={disableform1}
+                                >
+                                </lightning-button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-         </div>
-        </div>
-        </section>
+            </section>
         </template>
         <template if:true={error}>
             <my-error-panel errors={error}></my-error-panel>
@@ -159,9 +174,12 @@
                         slds-m-top_x-large
                         slds-m-aound_xx-large
                         slds-text-heading_medium
-                     "
+                    "
                 >
-                    <b>Thanks for registering, <span class="name">{attendeeName}</span>!</b>
+                    <b
+                        >Thanks for registering,&nbsp;
+                        <span class="name">{attendeeName}</span>!</b
+                    >
                     <br /><br />
                     <div>
                         Join us, starting June 1st 2022 to July 9 2022, for a

@@ -4,5 +4,4 @@ export default class ContentTile extends LightningElement {
     @api imgUrl;
     @api badgeUrl;
     @api badgeType;
-
 }
