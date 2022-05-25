@@ -22,9 +22,18 @@
                         label="Please enter your Trailhead Email Address"
                         onchange={handlePopupEmailChange}
                         disabled={disableform1}
-                        class="slds-p-bottom_small"
+                        class="themail2 slds-p-bottom_small"
                 >
                 </lightning-input>
+                <lightning-combobox
+                        name="T-shirtSize"
+                        label="T-shirt Size"
+                        required="true"
+                        options={options}
+                        onchange={handleSizeChange}
+                        class="size2 slds-p-bottom_small"
+                >
+                </lightning-combobox>
                 <lightning-button
                                 label="Submit"
                                 variant="brand"
@@ -33,10 +42,10 @@
                             >
                             </lightning-button>
                 </div>
-                </div>
-                </div>
-              </div>
-              </section>
+            </div>
+         </div>
+        </div>
+        </section>
         </template>
         <template if:true={error}>
             <my-error-panel errors={error}></my-error-panel>
@@ -79,7 +88,7 @@
                             label="Name"
                             onchange={handleNameChange}
                             disabled={disableform1}
-                            class="slds-p-bottom_small"
+                            class="name1 slds-p-bottom_small"
                         >
                         </lightning-input>
 
@@ -90,21 +99,21 @@
                             label="Email Address"
                             onchange={handleEmailChange}
                             disabled={disableform1}
-                            class="slds-p-bottom_small"
+                            class="email1 slds-p-bottom_small"
                         >
                         </lightning-input>
 
                         <lightning-input
-                            type="email"
+                            type="themail"
                             name="themail"
                             required="true"
                             label="Trailhead Email Address"
                             onchange={handleThEmailChange}
                             disabled={disableform1}
-                            class="slds-p-bottom_small"
+                            class="themail1 slds-p-bottom_small"
                         >
                         </lightning-input>
-                        <p class="slds-p-bottom_small">
+                        <p class="slds-p-bottom_small slds-form-element__label">
                             New to Trailhead?&nbsp;
                             <a
                                 href="https://trailblazer.me/TrailblazerLogin?display=page&mode=signup&sdtd=1&startURL=%2Fsetup%2Fsecur%2FRemoteAccessAuthorizationPage.apexp%3Fsource%3DCAAAAXoaO6FzMDAwMDAwMDAwMDAwMDAwAAAA6FLIJ6oRTpLBzCbGnhcjOWV15foHJPvVyTYG47kZSZDh5y56EVFpBB-Kiy4OV0Ifvsx9q1vSgAUre3JZGA2eCPQs4SVFhDSStubvgW2eqDPaLPzelzBb-jrTaXvE0J1xedWg_cfNLp7Oa4YvumTECUTV8oT5_xL4f4cAx9qSOOYQ8i2Q3-LGYnSQPxV-Yglh2_924H6dGtVcLtLmM3eIoaagaKF-_Dq-c6ld5tb1252JzgED4zeOwPE3YWmi69sN407hTgeIf2BXEu3PtVRNRCLJGIhqRI2DBRMVpQ0EdhxSw8qGDIL8bbogy5-0U_6gqIedcpFhwhmFQySoXeGTtWQi5awXsbpCzxyfAwyF-kNqq5SyULfp9rQc8kq9uMUhNwuQ3zgVHLq-sxBhL7P6gkim1dadpN9okfozuN2e7JNy-fTPJJqLASfgaWR3-Kv_cpLfeJoWnXQGrgxqXJQ5aVkEjhKCRk5jOfmGq-Nrb1w7FN4-MFDjkbAjwz8fC3ucnSGYoGih3ndnXMZjUelrthtEbMWT1ri3pGxKgW_lqMbWDZu0Mbco7aym_U_oa2gfwgKBSPqxg4Qex23I5rdZiG1JyQSP14ORak-_i50SOR5SAweqP91cBt9yxoIc1TsKQ-OtD9Sa-llqt8pZuko8YpVYY_pcO09MhXfID0-95Wd88l2I1n12HVLmbQW7HOZejNWXuWbvpoBzvDgd18iQ3pjsgrBSseNGqiOnre2xESejdqi-laSg9endR7aOQozGozV4obmi5Z6HkfvdXWyQriI%253D%26display%3Dpage"
@@ -112,6 +121,14 @@
                                 >Signup</a
                             >&nbsp;for free
                         </p>
+                        <lightning-combobox
+                            name="T-shirtSize"
+                            label="T-shirt Size"
+                            required="true"
+                            options={options}
+                            onchange={handleSizeChange}
+                            class="size1 slds-p-bottom_small"
+                        ></lightning-combobox>
 
                         <label
                             for="terms"

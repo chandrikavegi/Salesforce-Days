@@ -22,6 +22,7 @@ export default class Registration extends LightningElement {
     attendeeName;
     showPopup = false;
     attendeeId;
+    tshirtSize;
 
     connectedCallback(){
         this.attendeeId = localStorage.getItem("attendeeId_22");
@@ -47,8 +48,20 @@ export default class Registration extends LightningElement {
     handleThEmailChange(event) {
         this.thEmail = event.target.value;
     }
+    handleSizeChange(event) {
+        this.tshirtSize = event.target.value;
+    }
     handlePopupEmailChange(event){
         this.thEmail = event.target.value;
+    }
+    get options() {
+        return [
+            { label: 'Small', value: 'Small' },
+            { label: 'Medium', value: 'Medium' },
+            { label: 'Large', value: 'Large' },
+            { label: 'X-large', value: 'X-large' },
+            { label: 'XX-large', value: 'XX-large' },
+        ];
     }
 
 
@@ -56,31 +69,38 @@ export default class Registration extends LightningElement {
         let isvalid = true;
         this.error = '';
         const textboxElement =
-            this.template.querySelectorAll('lightning-input')[1];
+            this.template.querySelector(".name1");
         if (!textboxElement.checkValidity()) {
             textboxElement.reportValidity();
             isvalid = false;
         }
         const emailElement =
-            this.template.querySelectorAll('lightning-input')[2];
+            this.template.querySelector(".email1");
         if (!emailElement.checkValidity()) {
             emailElement.reportValidity();
             isvalid = false;
         }
 
         const themailElement = 
-            this.template.querySelectorAll('lightning-input')[3];
+            this.template.querySelector(".themail1");
         if (!emailElement.checkValidity()) {
             themailElement.reportValidity();
             isvalid = false;
         }
-
-        if (isvalid && this.name && this.email && this.thEmail) {
+        const tshirtSizeElement = 
+             this.template.querySelector(".size1");
+        if (!tshirtSizeElement.checkValidity()) {
+            tshirtSizeElement.reportValidity();
+           isvalid = false;   
+        } 
+            console.log()
+        if (isvalid && this.name && this.email && this.thEmail && this.tshirtSize) {
             this.showSpinner = true;
             getData('/api/register', {
                 name: this.name,
                 email: this.email,
-                thEmail: this.thEmail
+                thEmail: this.thEmail,
+                tshirtSize: this.tshirtSize
             })
                 .then((result) => {
                     this.leadId = result;
@@ -100,21 +120,29 @@ export default class Registration extends LightningElement {
                     this.showSpinner = false;
                 });
         }
+    
     }
     handleSubmit(){
         let isvalid = true;
         this.error = '';
         const textboxElement =
-            this.template.querySelectorAll('lightning-input')[0];
+            this.template.querySelector(".themail2");
         if (!textboxElement.checkValidity()) {
             textboxElement.reportValidity();
             isvalid = false;
+        }
+        const tshirtSizeElement = 
+             this.template.querySelector(".size2");
+        if (!tshirtSizeElement.checkValidity()) {
+            tshirtSizeElement.reportValidity();
+           isvalid = false; 
         }
             if (isvalid && this.attendeeId && this.thEmail) {
                 this.showSpinner = true;
                 getData('/api/updateThEmail', {
                     attendeeId: this.attendeeId,
-                    thEmail: this.thEmail
+                    thEmail: this.thEmail,
+                    tshirtSize: this.tshirtSize
                 })
                     .then(() => {
                         this.showPopup = false;
