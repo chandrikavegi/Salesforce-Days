@@ -1,6 +1,7 @@
 <template>
     <div class="wrapper">
-        <template if:true={showPopup}>
+        <my-process onshowcontent = {handleContent}></my-process>
+             <template if:true={showPopup}>
             <section
                 role="dialog"
                 tabindex="-1"
@@ -168,7 +169,12 @@
         </template>
         <template if:true={showContent}>
             <div class="slds-p-around_x-large content">
-                <th-all-badges></th-all-badges>
+                <template if:true={showBeginnerContent}> 
+                <my-all-days></my-all-days>
+                </template>
+                <template if:true={showAdvancedContent}>
+                    <th-all-badges></th-all-badges>
+                </template>
             </div>
         </template>
     </div>
