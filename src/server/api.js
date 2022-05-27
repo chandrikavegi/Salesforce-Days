@@ -89,7 +89,8 @@ app.get('/api/register', function (req, res) {
         'deloitte.com',
         'mindtree.com',
         'persistent.com',
-        'infosys.com'
+        'infosys.com',
+        'teqfocus.com'
     ];
     const domain = email.split('@')[1];
     if (validDomains.includes(domain)) {

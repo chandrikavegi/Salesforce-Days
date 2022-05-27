@@ -4,25 +4,23 @@
     text-align: center;
 }
 
-.title {
-    font-family: 'Neutraface';
-    font-size: 24px;
-}
-
 .dayBody {
     line-height: 2;
     min-height: 55px;
+    color: white;
+    font-family: 'SalesforceSans-Regular';
+    font-size: 32px;
 }
 
 .slds-card {
     max-width: 275px;
     margin-bottom: 1rem;
-    background: #acbed4;
 }
 
 .consistent-height {
-    min-height: 280px;
+    min-height: 380px;
     text-align: left;
+    font-size: 14px;
 }
 
 .overlay {
@@ -41,9 +39,7 @@
     text-align: center;
 }
 
-.icon-margin {
-    margin-right: 5px;
-}
 .icon {
-    padding: 10px;
+    padding-right: 5px;
+    display: inline-block;
 }
