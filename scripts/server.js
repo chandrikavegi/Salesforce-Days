@@ -9,7 +9,7 @@ app.use(helmet.contentSecurityPolicy({
     directives: {
         defaultSrc: ["'self'"],
         frameSrc: ["'self'", '*.youtube.com'],
-        imgSrc: ["'self'", '*.res.cloudinary.com', '*.google.com']
+        imgSrc: ["'self'", '*.cloudinary.com']
     }
 }));
 app.use(compression());
