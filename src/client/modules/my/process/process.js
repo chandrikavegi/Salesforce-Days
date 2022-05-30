@@ -2,7 +2,6 @@ import { LightningElement } from 'lwc';
 
 export default class Process extends LightningElement {
     handleBeginner(){
-        console.log('entered beginner');
         const event = new CustomEvent('showcontent', {
             detail: { showBeginner : true , showAdvanced: false}
         });

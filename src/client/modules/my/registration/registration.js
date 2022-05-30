@@ -39,10 +39,8 @@ export default class Registration extends LightningElement {
         }
     }
     handleContent(event){
-        console.log('entered listener');
         this.showBeginnerContent = event.detail.showBeginner;
         this.showAdvancedContent = event.detail.showAdvanced;
-        console.log(event.detail.showBeginner,event.detail.showAdvanced)
     }
 
     handleEmailChange(event) {

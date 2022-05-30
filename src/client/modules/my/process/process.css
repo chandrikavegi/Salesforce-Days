@@ -4,7 +4,7 @@
 
 .slds-card {
     margin-bottom: 1rem;
-    min-height: 340px;
+    min-height: 360px;
     min-width: 280px;
     background-color: #cfe9fe;
     font-family: 'SalesforceSans-Regular';
@@ -23,4 +23,12 @@ img {
     .slds-large-size_1-of-4 {
         width: 25%;
     }
+}
+.slds-card:hover::after{
+    content: 'Get Started';
+    font-size: medium;
+    font-weight: bold;
+    color: #032d60;
+    font-family: 'SalesforceSans-Regular';
+
 }
