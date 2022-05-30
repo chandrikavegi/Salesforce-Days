@@ -16,7 +16,7 @@ app.use(helmet.contentSecurityPolicy({
         defaultSrc: ["'self'"],
         scriptSrcElem: ["'self'", "'unsafe-inline'"],
         styleSrc: ["'self'", "'unsafe-inline'"],
-        frameAncestors: ["'self'", 'www.youtube.com'],
+        frameSrc: ["'self'", 'youtube.com'],
         imgSrc: ["'self'", '*.cloudinary.com']
     }
 }));
