@@ -1,18 +1,16 @@
 import { LightningElement } from 'lwc';
 
 export default class Process extends LightningElement {
-    handleBeginner(){
+    handleBeginner() {
         const event = new CustomEvent('showcontent', {
-            detail: { showBeginner : true , showAdvanced: false}
+            detail: { showBeginner: true, showAdvanced: false }
         });
         this.dispatchEvent(event);
     }
-    handleAdvanced(){
+    handleAdvanced() {
         const event = new CustomEvent('showcontent', {
-            detail: { showBeginner : false,showAdvanced: true}
+            detail: { showBeginner: false, showAdvanced: true }
         });
         this.dispatchEvent(event);
     }
-
-
 }

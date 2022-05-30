@@ -24,11 +24,10 @@ img {
         width: 25%;
     }
 }
-.slds-card:hover::after{
+.slds-card:hover::after {
     content: 'Get Started';
     font-size: medium;
     font-weight: bold;
     color: #032d60;
     font-family: 'SalesforceSans-Regular';
-
 }

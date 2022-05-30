@@ -1,0 +1,69 @@
+<template>
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid dayBanner">
+            <header
+                class="slds-media slds-media_center slds-has-flexi-truncate"
+            >
+                <div class="slds-media__figure"></div>
+                <div class="slds-p-bottom_medium slds-media__body dayBody">
+                    <div class="slds-text-heading_small">Business Challenge</div>
+                </div>
+            </header>
+        </div>
+        <div class="slds-card__body slds-card__body_inner consistent-height slds-scrollable challenge">
+            <div class="slds-text-title_bold" style="margin-bottom: 5px">
+                Challenge
+            </div>
+            <p>
+                We need to help an amusement park manage its rides, shows,
+                customers and discounts. Help them by creating a Resort
+                application with automated approval processes, using
+                configuration only.
+            </p>
+            <div class="slds-text-title_bold" style="margin-bottom: 5px">
+                Requirements
+            </div>
+            <ol class="slds-list_ordered">
+                <li>
+                    This challenge is for the Lightning Experience and requires
+                    Developer Edition: <a href="sforce.co/2tnM5a7">sforce.co/2tnM5a7</a>.
+                </li>
+                <li>
+                     No code is allowed. This includes Apex, Visualforce,
+                    Lightning components, custom JavaScript buttons, or
+                    integration with external systems.
+                </li>
+                <li>
+                     Show object should contain Name, Date, Price, Total Seats
+                    and Booked Seats. Each show or ride is limited by number of
+                    seats (total seats).
+                </li>
+                <li>
+                     Ticket object should capture Customer Name, Number of
+                    Adult seats, Number of Child seats and Discount. Price must
+                    be derived from
+                    the Show object. The Total Cost should be automatically
+                    calculated.
+                    If the seats are filled, no additional bookings are to be
+                    allowed.
+                </li>
+                <li>
+                     Discounts are permitted for the following scenarios:
+                    <ul class="slds-list_dotted">
+                        <li>Child seat has a default discount of 25%.</li>
+                        <li>
+                            Special discount is permitted through the discount
+                            field. If this discount is more than 30%, approval from the manager
+                            is required. Record should be locked while under
+                            approval process.
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+            <div class="slds-text-title_bold" style="margin-bottom: 5px">
+                Features to be used
+            </div>
+            <b>• Approval Processes • Configuration for Building the Data Model • Relationships Between Custom Objects • Validation Rules</b>
+        </div>
+    </article>
+</template>
