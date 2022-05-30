@@ -11,7 +11,16 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express();
-app.use(helmet());
+app.use(helmet.contentSecurityPolicy({
+    directives: {
+        defaultSrc: ["'self'"],
+        scriptSrcElem: ["'self'", "'unsafe-inline'"],
+        styleSrc: ["'self'", "'unsafe-inline'"],
+        connectSrc: ['www.googleapis.com'],
+        frameAncestors: ["'self'",'www.youtube.com'],
+        imgSrc: ["'self'", '*.cloudinary.com']
+    }
+}));
 app.use(compression());
 
 app.use(bodyParser.urlencoded({ extended: false }));
