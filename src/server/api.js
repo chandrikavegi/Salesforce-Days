@@ -268,6 +268,7 @@ app.get('/api/register', function (req, res) {
         res.status(400).send();
     }
 });
+
 app.get('/api/updateThEmail', function (req, res) {
     const { email, thEmail, tshirtSize } = req.query;
     const lCEmail = email.toLowerCase();
@@ -283,6 +284,27 @@ app.get('/api/updateThEmail', function (req, res) {
         res.status(400).send();
     }
 });
+
+app.get('/api/updateHackCompletion', function (req, res) {
+    const { email, secret } = req.query;
+    if(secret === '300c31639e12c3582ac08bf480498779'){
+        const lCEmail = email.toLowerCase();
+        const domain = lCEmail.split('@')[1];
+        if (validDomains.includes(domain)) {
+            const url = `/leadData/updateHackCompletion?email=${encodeURIComponent(
+                email
+            )}`;
+            restUtilsObj.doApexGet(url, req, res);
+        } else {
+            res.statusMessage =
+                'Invalid email address: Your organization is not a part of Salesforce Days';
+            res.status(400).send();
+        }
+    } else {
+        res.status(400).send();
+    }
+});
+
 
 app.listen(PORT, () =>
     console.log(`✅  API Server started: http://${HOST}:${PORT}`)
