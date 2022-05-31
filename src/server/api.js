@@ -18,7 +18,7 @@ app.use(
             scriptSrcElem: ["'self'", "'unsafe-inline'"],
             styleSrc: ["'self'", "'unsafe-inline'"],
             frameSrc: ["'self'", '*.youtube.com'],
-            imgSrc: ["'self'", '*.cloudinary.com']
+            imgSrc: ["'self'", '*.cloudinary.com', '*.ytimg.com']
         }
     })
 );

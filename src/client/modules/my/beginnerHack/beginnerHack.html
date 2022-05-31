@@ -15,10 +15,9 @@
                 Challenge
             </div>
             <p>
-                We need to help an amusement park manage its rides, shows,
-                customers and discounts. Help them by creating a Resort
-                application with automated approval processes, using
-                configuration only.
+                We need to help an amusement park manage its rides, tickets for
+                rides and discounts. Help them by creating an application with
+                automated approval processes, using configuration only.
             </p>
             <div
                 class="
@@ -37,34 +36,41 @@
                         target="_blank"
                         >Developer Edition</a
                     >
-                    org.
+                    &nbsp;org.
                 </li>
+                <li>No code is needed.</li>
                 <li>
-                    No code is needed. This includes Apex, Visualforce,
-                    Lightning components, custom JavaScript buttons, or
-                    integration with external systems.
-                </li>
-                <li>
-                    The "Show" object should contain Name, Date, Price, Total
-                    Seats and Booked Seats. Each show or ride is limited by
-                    number of seats (Total seats).
+                    The "Ride" object should contain Name, Date, Price per
+                    ticket, Total Seats and Booked Seats. Each ride is limited
+                    by number of seats (Total seats).
                 </li>
                 <li>
                     The "Ticket" object should capture Customer Name, Number of
-                    Adult seats, Number of Child seats and Discount. The Total
-                    Price must be derived from the Show object. The Total Cost
-                    should be automatically calculated. If the seats are filled,
-                    no additional bookings are to be allowed.
+                    Adult seats and Number of Child seats.
+                    <ul class="slds-list_dotted">
+                        <li>
+                            If the ride's seats are filled, no additional
+                            tickets are allowed to be created.
+                        </li>
+                        <li>
+                            The "Total Cost" of the ticket must be automatically
+                            calculated based on the price per ticket listed on
+                            the ride.
+                        </li>
+                        <li>
+                            A child seat costs 25% lesser than the adult seat.
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    Discounts are permitted for the following scenarios:
+                    Discounts are permitted on the total price of a ticket.
                     <ul class="slds-list_dotted">
-                        <li>Child seat has a default discount of 25%.</li>
+                        <li>"Discount Percent" is captured on the Ticket.</li>
+                        <li>The total price must reflect the discount.</li>
                         <li>
-                            Special discount is permitted through the discount
-                            field. If this discount is more than 30%, approval
-                            from the manager is required. Record should be
-                            locked while under approval process.
+                            If this discount is more than 30%, approval from the
+                            manager is required. Record should be locked while
+                            under approval process.
                         </li>
                     </ul>
                 </li>
