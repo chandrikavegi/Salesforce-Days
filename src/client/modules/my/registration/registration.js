@@ -128,6 +128,11 @@ export default class Registration extends LightningElement {
     handleSubmit() {
         let isvalid = true;
         this.error = '';
+        const popupEmail = this.template.querySelector('.email1');
+        if (!popupEmail.checkValidity()) {
+            popupEmail.reportValidity();
+            isvalid = false;
+        }
         const textboxElement = this.template.querySelector('.themail2');
         if (!textboxElement.checkValidity()) {
             textboxElement.reportValidity();
@@ -138,10 +143,10 @@ export default class Registration extends LightningElement {
             tshirtSizeElement.reportValidity();
             isvalid = false;
         }
-        if (isvalid && this.attendeeId && this.thEmail) {
+        if (isvalid && this.attendeeId && this.thEmail && this.email) {
             this.showSpinner = true;
             getData('/api/updateThEmail', {
-                attendeeId: this.attendeeId,
+                email: this.email,
                 thEmail: this.thEmail,
                 tshirtSize: this.tshirtSize
             })
