@@ -24,6 +24,10 @@ img {
         width: 25%;
     }
 }
+.slds-card:hover{
+    background-color: #fff;
+}
+
 .slds-card:hover::after {
     content: 'Get Started';
     font-size: medium;
