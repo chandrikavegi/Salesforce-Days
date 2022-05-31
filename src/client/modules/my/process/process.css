@@ -26,6 +26,7 @@ img {
 }
 .slds-card:hover{
     background-color: #fff;
+    cursor: pointer;
 }
 
 .slds-card:hover::after {
