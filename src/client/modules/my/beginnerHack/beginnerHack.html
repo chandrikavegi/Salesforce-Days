@@ -1,17 +1,17 @@
 <template>
     <article class="slds-card">
-        <div class="slds-card__header slds-grid dayBanner">
-            <header
-                class="slds-media slds-media_center slds-has-flexi-truncate"
-            >
-                <div class="slds-media__figure"></div>
-                <div class="slds-p-bottom_medium slds-media__body dayBody">
-                    <div class="slds-text-heading_small">Business Challenge</div>
-                </div>
-            </header>
+        <div class="slds-card__header dayBanner slds-text-heading_medium">
+            Build a Park Management App
         </div>
-        <div class="slds-card__body slds-card__body_inner consistent-height slds-scrollable challenge">
-            <div class="slds-text-title_bold" style="margin-bottom: 5px">
+        <div
+            class="
+                slds-card__body slds-card__body_inner
+                consistent-height
+                slds-scrollable
+                challenge
+            "
+        >
+            <div class="slds-text-title_bold slds-m-bottom_small">
                 Challenge
             </div>
             <p>
@@ -20,50 +20,74 @@
                 application with automated approval processes, using
                 configuration only.
             </p>
-            <div class="slds-text-title_bold" style="margin-bottom: 5px">
+            <div
+                class="
+                    slds-text-title_bold
+                    slds-m-top_medium
+                    slds-m-bottom_small
+                "
+            >
                 Requirements
             </div>
             <ol class="slds-list_ordered">
                 <li>
                     This challenge is for the Lightning Experience and requires
-                    Developer Edition: <a href="sforce.co/2tnM5a7">sforce.co/2tnM5a7</a>.
+                    a Trailhead Playground or a&nbsp;<a
+                        href="https://sforce.co/2tnM5a7"
+                        target="_blank"
+                        >Developer Edition</a
+                    >
+                    org.
                 </li>
                 <li>
-                     No code is allowed. This includes Apex, Visualforce,
+                    No code is needed. This includes Apex, Visualforce,
                     Lightning components, custom JavaScript buttons, or
                     integration with external systems.
                 </li>
                 <li>
-                     Show object should contain Name, Date, Price, Total Seats
-                    and Booked Seats. Each show or ride is limited by number of
-                    seats (total seats).
+                    The "Show" object should contain Name, Date, Price, Total
+                    Seats and Booked Seats. Each show or ride is limited by
+                    number of seats (Total seats).
                 </li>
                 <li>
-                     Ticket object should capture Customer Name, Number of
-                    Adult seats, Number of Child seats and Discount. Price must
-                    be derived from
-                    the Show object. The Total Cost should be automatically
-                    calculated.
-                    If the seats are filled, no additional bookings are to be
-                    allowed.
+                    The "Ticket" object should capture Customer Name, Number of
+                    Adult seats, Number of Child seats and Discount. The Total
+                    Price must be derived from the Show object. The Total Cost
+                    should be automatically calculated. If the seats are filled,
+                    no additional bookings are to be allowed.
                 </li>
                 <li>
-                     Discounts are permitted for the following scenarios:
+                    Discounts are permitted for the following scenarios:
                     <ul class="slds-list_dotted">
                         <li>Child seat has a default discount of 25%.</li>
                         <li>
                             Special discount is permitted through the discount
-                            field. If this discount is more than 30%, approval from the manager
-                            is required. Record should be locked while under
-                            approval process.
+                            field. If this discount is more than 30%, approval
+                            from the manager is required. Record should be
+                            locked while under approval process.
                         </li>
                     </ul>
                 </li>
             </ol>
-            <div class="slds-text-title_bold" style="margin-bottom: 5px">
-                Features to be used
+            <div
+                class="
+                    slds-text-title_bold
+                    slds-m-top_medium
+                    slds-m-bottom_small
+                "
+            >
+                Challenge Verification
             </div>
-            <b>• Approval Processes • Configuration for Building the Data Model • Relationships Between Custom Objects • Validation Rules</b>
+            <ol class="slds-list_ordered slds-m-bottom_medium">
+                <li>
+                    Install this package. Select "Install for all users", when
+                    installing.
+                </li>
+                <li>Navigate to "Salesforce Days Challenge App"</li>
+                <li>
+                    Enter your Corporate Email Address and click on "Verify".
+                </li>
+            </ol>
         </div>
     </article>
 </template>

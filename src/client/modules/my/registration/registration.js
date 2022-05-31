@@ -38,9 +38,14 @@ export default class Registration extends LightningElement {
             }
         }
     }
-    handleContent(event){
+    handleContent(event) {
         this.showBeginnerContent = event.detail.showBeginner;
         this.showAdvancedContent = event.detail.showAdvanced;
+        setTimeout(() => {
+            this.template
+                .querySelector('.welcome')
+                .scrollIntoView({ behavior: 'smooth', alignToTop: true });
+        }, 100);
     }
 
     handleEmailChange(event) {

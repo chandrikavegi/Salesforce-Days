@@ -11,15 +11,17 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express();
-app.use(helmet.contentSecurityPolicy({
-    directives: {
-        defaultSrc: ["'self'"],
-        scriptSrcElem: ["'self'", "'unsafe-inline'"],
-        styleSrc: ["'self'", "'unsafe-inline'"],
-        frameSrc: ["'self'", '*.youtube.com'],
-        imgSrc: ["'self'", '*.cloudinary.com']
-    }
-}));
+app.use(
+    helmet.contentSecurityPolicy({
+        directives: {
+            defaultSrc: ["'self'"],
+            scriptSrcElem: ["'self'", "'unsafe-inline'"],
+            styleSrc: ["'self'", "'unsafe-inline'"],
+            frameSrc: ["'self'", '*.youtube.com'],
+            imgSrc: ["'self'", '*.cloudinary.com']
+        }
+    })
+);
 app.use(compression());
 
 app.use(bodyParser.urlencoded({ extended: false }));

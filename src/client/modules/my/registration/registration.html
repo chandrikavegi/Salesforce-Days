@@ -167,17 +167,41 @@
             </div>
         </template>
         <template if:true={showContent}>
+            <div
+                class="
+                    slds-text-align_center
+                    slds-p-top_x-large
+                    slds-text-heading_medium
+                    slds-m-bottom_medium
+                    welcome
+                "
+            >
+                <b
+                    >Hello,&nbsp;<span class="name">{attendeeName}</span>!
+                    Please click on a tile below to get started...</b
+                >
+            </div>
+
             <my-process onshowcontent={handleContent}></my-process>
-            <div class="slds-p-around_small">
+
+            <div class="slds-m-top_small mainContent">
                 <template if:true={showBeginnerContent}>
                     <my-all-days></my-all-days>
                 </template>
                 <template if:true={showAdvancedContent}>
                     <th-all-badges></th-all-badges>
                 </template>
-                <div class="terms-conditions">
-                    *While supplies last. Open to adults who received this
-                    invite directly from Salesforce. Participants must be legal
+                <div
+                    class="
+                        terms-conditions
+                        slds-p-around_large
+                        slds-m-top_x-large
+                        slds-p-bottom_x-large
+                    "
+                >
+                    <div class="slds-text-title_bold">Program Terms</div>
+                    While supplies last. Open to adults who received this invite
+                    directly from Salesforce. Participants must be legal
                     residents of India employed by a Salesforce partner company
                     in India. To be eligible to receive a gift, complete the
                     steps in either the “Beginner” or “Advanced” option of the

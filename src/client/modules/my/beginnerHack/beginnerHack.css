@@ -2,18 +2,15 @@
     background: #032d60;
     color: white;
     text-align: center;
-}
-
-.dayBody {
-    line-height: 2;
-    min-height: 55px;
-    color: white;
-    font-family: 'SalesforceSans-Regular';
-    font-size: 32px;
+    font-family: 'ITCAvantGardePro-Demi';
+    padding-bottom: 0.75rem;
+    height: 75px;
+    display: grid;
+    align-items: center;
 }
 
 .slds-card {
-    max-width: 450px;
+    max-width: 500px;
     margin-bottom: 1rem;
     text-align: left;
     font-size: 14px;

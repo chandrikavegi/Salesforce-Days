@@ -1,18 +1,9 @@
 <template>
     <article class="slds-card">
-        <div class="slds-card__header slds-grid dayBanner">
-            <header
-                class="slds-media slds-media_center slds-has-flexi-truncate"
-            >
-                <div class="slds-media__figure"></div>
-                <div class="slds-p-bottom_medium slds-media__body dayBody">
-                    <div class="slds-text-heading_small">{theme}</div>
-                </div>
-            </header>
+        <div class="slds-card__header dayBanner slds-text-heading_medium">
+            {theme}
         </div>
         <div class="slds-card__body slds-card__body_inner consistent-height">
-            <br />
-
             <template if:true={showLock}>
                 <div class="slds-text-align_center slds-m-top_x-large">
                     <img src="/resources/noDataErrorIllustration.svg" />
@@ -21,22 +12,30 @@
 
             <template if:true={content}>
                 <div
+                    class="
+                        slds-text-title_bold
+                        slds-m-top_small
+                        slds-m-bottom_small
+                    "
+                >
+                    YouTube Video
+                </div>
+                <div
                     class="slds-text-body_regular"
                     style="line-height: 5px; margin-bottom: 10px"
                 >
-                    <iframe
-                        src={content.tmUrl}
-                        width="240"
-                        height="200"
-                        loading="lazy"
-                        frameborder="0"
-                    >
-                    </iframe>
+                    <div class="video-container">
+                        <iframe
+                            src={content.tmUrl}
+                            loading="lazy"
+                            frameborder="0"
+                        >
+                        </iframe>
+                    </div>
                 </div>
-                <div class="slds-text-title_bold" style="margin-bottom: 5px">
+                <div class="slds-text-title_bold slds-m-top_large">
                     Trailhead Badges
                 </div>
-
                 <div>
                     <template for:each={content.contentLinks} for:item="c">
                         <span key={c.url}>
