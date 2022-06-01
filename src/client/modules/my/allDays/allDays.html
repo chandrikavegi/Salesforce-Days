@@ -2,13 +2,24 @@
     <div class="slds-p-around_medium wrapper">
         <div
             class="
-                slds-m-top_x-large
+                slds-m-top_large
                 slds-m-bottom_x-large
                 slds-text-align_center
                 slds-text-heading_large
             "
         >
-            <b>Content</b>
+            <b>Beginner</b>
+        </div>
+        <div
+            class="
+                slds-m-top_large
+                slds-m-bottom_x-large
+                slds-text-align_center
+                slds-text-heading_medium
+            "
+        >
+            <b>Step 1</b>: Watch video tutorials and complete Trailhead badges
+            for each topic below
         </div>
         <div class="slds-grid slds-gutters slds-grid_align-center slds-wrap">
             <div
@@ -22,8 +33,6 @@
                 <my-day
                     day-number="1"
                     theme="Introduction and Data Modeling"
-                    day-string="July 5th"
-                    quiz-time="April 17th at 11 a.m"
                     content={day1Content}
                 ></my-day>
             </div>
@@ -95,6 +104,22 @@
                     quiz-time="May 15th at 6 p.m. IST"
                     content={day5Content}
                 ></my-day>
+            </div>
+        </div>
+        <div
+            class="
+                slds-m-top_large
+                slds-m-bottom_medium
+                slds-text-align_center
+                slds-text-heading_medium
+            "
+        >
+            <b>Step 2</b>: Apply the skills you've learnt to solve the below
+            business challenge
+        </div>
+        <div class="slds-grid slds-gutters slds-grid_align-center slds-wrap">
+            <div class="slds-p-around_medium">
+                <my-beginner-hack></my-beginner-hack>
             </div>
         </div>
     </div>

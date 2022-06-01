@@ -1,0 +1,108 @@
+<template>
+    <article class="slds-card">
+        <div class="slds-card__header dayBanner slds-text-heading_medium">
+            Build a Park Management App
+        </div>
+        <div
+            class="
+                slds-card__body slds-card__body_inner
+                consistent-height
+                slds-scrollable
+                challenge
+            "
+        >
+            <div class="slds-text-title_bold slds-m-bottom_small">
+                Challenge
+            </div>
+            <p>
+                We need to help an amusement park manage its rides, tickets for
+                rides and discounts. Help them by creating an application with
+                automated approval processes, using configuration only.
+            </p>
+            <div
+                class="
+                    slds-text-title_bold
+                    slds-m-top_medium
+                    slds-m-bottom_small
+                "
+            >
+                Requirements
+            </div>
+            <ol class="slds-list_ordered">
+                <li>
+                    This challenge is for the Lightning Experience and requires
+                    a Trailhead Playground or a&nbsp;<a
+                        href="https://sforce.co/2tnM5a7"
+                        target="_blank"
+                        >Developer Edition</a
+                    >
+                    &nbsp;org.
+                </li>
+                <li>No code is needed.</li>
+                <li>
+                    The "Ride" object should contain Name, Date and Time, Price per
+                    ticket, Total Seats and Booked Seats (auto calculated based on Tickets). Each ride is limited
+                    by number of seats (Total seats).
+                </li>
+                <li>
+                    The "Ticket" object should capture Customer Name, Number of
+                    Adult seats and Number of Child seats.
+                    <ul class="slds-list_dotted">
+                        <li>
+                            If the ride's seats are filled, no additional
+                            tickets are allowed to be created.
+                        </li>
+                        <li>
+                            The "Total Cost" of the ticket must be automatically
+                            calculated based on the price per ticket listed on
+                            the ride.
+                        </li>
+                        <li>
+                            A child seat costs 25% lesser than the adult seat.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Discounts are permitted on the total price of a ticket.
+                    <ul class="slds-list_dotted">
+                        <li>"Discount Percent" is captured on the Ticket.</li>
+                        <li>The total price must reflect the discount.</li>
+                        <li>
+                            If this discount is more than 30%, approval from the
+                            manager is required. Record should be locked while
+                            under approval process.
+                        </li>
+                        <li>"Discount Approval Status" field is used to capture the approval status. It can either be blank, "Pending" or "Approved"</li>
+                    </ul>
+                </li>
+            </ol>
+            <div
+                class="
+                    slds-text-title_bold
+                    slds-m-top_medium
+                    slds-m-bottom_small
+                "
+            >
+                Challenge Verification
+            </div>
+            <ol class="slds-list_ordered slds-m-bottom_medium">
+                <li>
+                    Install the Salesforce Days verification package<sup>*</sup>. 
+                    <ul class="slds-list_dotted">
+                        <li>For Trailhead Playgrounds, use the Package Id - 04t3j000000wzTrAAI</li>
+                        <li>For a Developer Edition org, <a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3j000000wzTrAAI" target="_blank">click this URL</a>.</li>
+                        <li>Select "Install for all users", when installing.</li>
+                    </ul>
+                </li>
+                <li>Navigate to "Salesforce Days Challenge App"</li>
+                <li>
+                    Enter your Corporate Email Address and click on "Verify".
+                </li>
+            </ol>
+            <sup>*</sup>Don't know how to install packages? Check out these links:<br/>
+            <a href="https://www.youtube.com/watch?v=rYUsVsIxAAQ" target="_blank">Install Packages from URL</a>
+            <br/>
+            <a href="https://trailhead.salesforce.com/en/content/learn/modules/trailhead_playground_management/install-apps-and-packages-in-your-trailhead-playground" target="_blank">Install Packages in Trailhead Playgrounds</a>.
+        </div>
+    </article>
+</template>

@@ -11,7 +11,17 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express();
-app.use(helmet());
+app.use(
+    helmet.contentSecurityPolicy({
+        directives: {
+            defaultSrc: ["'self'"],
+            scriptSrcElem: ["'self'", "'unsafe-inline'"],
+            styleSrc: ["'self'", "'unsafe-inline'"],
+            frameSrc: ["'self'", '*.youtube.com'],
+            imgSrc: ["'self'", '*.cloudinary.com', '*.ytimg.com']
+        }
+    })
+);
 app.use(compression());
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -70,7 +80,171 @@ jwt.getToken(
 
 const validDomains = [
     'hcl.com',
-    '22feettribalww.com','360degreecloud.co.in','360degreecloud.com','360degreecloud.in','360smsapp.com','absyz.com','accenture.com','aethereus.com','aimdek.com','appcino.com','appistoki.com','appistoki.in','appstrail.com','aspiresys.com','assurant.com','atcs.com','atos.net','bigworks.co','birlasoft.com','bluepineapple.io','borngroup.com','brainvire.com','brickredsys.com','capgemini.com','cccinfotech.com','ceptes.com','cequitysolutions.com','cloobees.com','cloudcertitude.com','cloudexpertsindia.com','cloudodyssey.co.uk','cloudroute.in','cloufi.com','codleo.com','cognizant.com','comprotechnologies.com','conclotechnologies.com','coservesolutions.com','credextechnology.com','csaconsultants.in','customercentria.com','cybage.com','cyient.com','cymetrixsoft.com','damcogroup.com','dazeworks.com','dccil.com','deligence.com','deloitte.com','dentsu.com','dextara.com','dgenx.co','digicloudsolns.com','dxc.com','eclerx.com','epeoplebc.com','eternussolutions.com','exavalu.com','excellerconsultancy.in','extentia.com','fexle.com','finessedirect.com','fingertipplus.com','fiserv.com','flexsin.com','forcearkconsulting.com','getoncrm.com','girikon.com','groupm.com','happiestminds.com','horizontal.com','iconresources.com','in.ibm.com','infosys.com','infrabyteits.com','infusai.com','ingrammicro.com','innovacx.com','innovarsspl.com','interactiveavenues.com','isobar.com','jarvisbusiness.io','jeevantechnologies.com','kloudrac.com','kpmg.com','krazy-tech.com','kriosispl.com','kvpcorp.com','lntinfotech.com','logicrain.com','magnet360.com','mannyats.com','manras.com','marlabs.com','maxify.digital','melonleaf.com','merkleinc.com','metaoups.com','metyis.com','mightyhive.com','mind-infotech.com','mindtree.com','mirumagency.com','mphatek.com','mresult.com','nanostuffs.com','newsxsys.com','nivasoft.com','nttdata.com','orbitinnovations.com','orioncoders.com','persistent.com','plus91labs.com','processthreesixty.com','proseraa.com','publicissapient.com','purplstack.com','pwc.com','quadrafort.com','ranosys.com','redington.co.in','rsystems.com','rudhrainfosolutions.com','sapours.com','siratek.in','sislinfotech.com','skinternational.com','socialbeat.in','softsquare.biz','sokrati.com','solveda.com','spectrum7tech.com','stetig.in','suneratech.com','sweven.com','tcs.com','techaim.in','techilaservices.com','techmahindra.com','techmatrixconsulting.com','techshiney.com','teqfocus.com','theretailinsights.com','tractionondemand.com','tranzevo.com','uneecops.com','utilitarianlab.com','valueaddsofttech.com','veneratesolutions.com','verticurl.com','virtuenix.com','virtusa.com','vyomlabs.com','warpdrivetech.in','whishworks.com','wipro.com','wundermanthompson.com','xerago.com','yash.com','zensar.com','ibm.com','zoxima.com','sevenx.io','coreflexsolutions.com','satrangtech.com'
+    '22feettribalww.com',
+    '360degreecloud.co.in',
+    '360degreecloud.com',
+    '360degreecloud.in',
+    '360smsapp.com',
+    'absyz.com',
+    'accenture.com',
+    'aethereus.com',
+    'aimdek.com',
+    'appcino.com',
+    'appistoki.com',
+    'appistoki.in',
+    'appstrail.com',
+    'aspiresys.com',
+    'assurant.com',
+    'atcs.com',
+    'atos.net',
+    'bigworks.co',
+    'birlasoft.com',
+    'bluepineapple.io',
+    'borngroup.com',
+    'brainvire.com',
+    'brickredsys.com',
+    'capgemini.com',
+    'cccinfotech.com',
+    'ceptes.com',
+    'cequitysolutions.com',
+    'cloobees.com',
+    'cloudcertitude.com',
+    'cloudexpertsindia.com',
+    'cloudodyssey.co.uk',
+    'cloudroute.in',
+    'cloufi.com',
+    'codleo.com',
+    'cognizant.com',
+    'comprotechnologies.com',
+    'conclotechnologies.com',
+    'coservesolutions.com',
+    'credextechnology.com',
+    'csaconsultants.in',
+    'customercentria.com',
+    'cybage.com',
+    'cyient.com',
+    'cymetrixsoft.com',
+    'damcogroup.com',
+    'dazeworks.com',
+    'dccil.com',
+    'deligence.com',
+    'deloitte.com',
+    'dentsu.com',
+    'dextara.com',
+    'dgenx.co',
+    'digicloudsolns.com',
+    'dxc.com',
+    'eclerx.com',
+    'epeoplebc.com',
+    'eternussolutions.com',
+    'exavalu.com',
+    'excellerconsultancy.in',
+    'extentia.com',
+    'fexle.com',
+    'finessedirect.com',
+    'fingertipplus.com',
+    'fiserv.com',
+    'flexsin.com',
+    'forcearkconsulting.com',
+    'getoncrm.com',
+    'girikon.com',
+    'groupm.com',
+    'happiestminds.com',
+    'horizontal.com',
+    'iconresources.com',
+    'in.ibm.com',
+    'infosys.com',
+    'infrabyteits.com',
+    'infusai.com',
+    'ingrammicro.com',
+    'innovacx.com',
+    'innovarsspl.com',
+    'interactiveavenues.com',
+    'isobar.com',
+    'jarvisbusiness.io',
+    'jeevantechnologies.com',
+    'kloudrac.com',
+    'kpmg.com',
+    'krazy-tech.com',
+    'kriosispl.com',
+    'kvpcorp.com',
+    'lntinfotech.com',
+    'logicrain.com',
+    'magnet360.com',
+    'mannyats.com',
+    'manras.com',
+    'marlabs.com',
+    'maxify.digital',
+    'melonleaf.com',
+    'merkleinc.com',
+    'metaoups.com',
+    'metyis.com',
+    'mightyhive.com',
+    'mind-infotech.com',
+    'mindtree.com',
+    'mirumagency.com',
+    'mphatek.com',
+    'mresult.com',
+    'nanostuffs.com',
+    'newsxsys.com',
+    'nivasoft.com',
+    'nttdata.com',
+    'orbitinnovations.com',
+    'orioncoders.com',
+    'persistent.com',
+    'plus91labs.com',
+    'processthreesixty.com',
+    'proseraa.com',
+    'publicissapient.com',
+    'purplstack.com',
+    'pwc.com',
+    'quadrafort.com',
+    'ranosys.com',
+    'redington.co.in',
+    'rsystems.com',
+    'rudhrainfosolutions.com',
+    'sapours.com',
+    'siratek.in',
+    'sislinfotech.com',
+    'skinternational.com',
+    'socialbeat.in',
+    'softsquare.biz',
+    'sokrati.com',
+    'solveda.com',
+    'spectrum7tech.com',
+    'stetig.in',
+    'suneratech.com',
+    'sweven.com',
+    'tcs.com',
+    'techaim.in',
+    'techilaservices.com',
+    'techmahindra.com',
+    'techmatrixconsulting.com',
+    'techshiney.com',
+    'teqfocus.com',
+    'theretailinsights.com',
+    'tractionondemand.com',
+    'tranzevo.com',
+    'uneecops.com',
+    'utilitarianlab.com',
+    'valueaddsofttech.com',
+    'veneratesolutions.com',
+    'verticurl.com',
+    'virtuenix.com',
+    'virtusa.com',
+    'vyomlabs.com',
+    'warpdrivetech.in',
+    'whishworks.com',
+    'wipro.com',
+    'wundermanthompson.com',
+    'xerago.com',
+    'yash.com',
+    'zensar.com',
+    'ibm.com',
+    'zoxima.com',
+    'sevenx.io',
+    'coreflexsolutions.com',
+    'satrangtech.com'
 ];
 
 // Redirect all non /api/ endpoint requests to index.html
@@ -94,22 +268,43 @@ app.get('/api/register', function (req, res) {
         res.status(400).send();
     }
 });
+
 app.get('/api/updateThEmail', function (req, res) {
     const { email, thEmail, tshirtSize } = req.query;
     const lCEmail = email.toLowerCase();
     const domain = lCEmail.split('@')[1];
     if (validDomains.includes(domain)) {
-    const url = `/leadData/updateThEmail?email=${encodeURIComponent(
-        email
-    )}&thEmail=${thEmail}&tshirtSize=${tshirtSize}`;
-    restUtilsObj.doApexGet(url, req, res);
+        const url = `/leadData/updateThEmail?email=${encodeURIComponent(
+            email
+        )}&thEmail=${thEmail}&tshirtSize=${tshirtSize}`;
+        restUtilsObj.doApexGet(url, req, res);
     } else {
         res.statusMessage =
             'Invalid email address: Your organization is not a part of Salesforce Days';
         res.status(400).send();
-}
-
+    }
 });
+
+app.get('/api/updateHackCompletion', function (req, res) {
+    const { email, secret } = req.query;
+    if(secret === '300c31639e12c3582ac08bf480498779'){
+        const lCEmail = email.toLowerCase();
+        const domain = lCEmail.split('@')[1];
+        if (validDomains.includes(domain)) {
+            const url = `/leadData/updateHackCompletion?email=${encodeURIComponent(
+                email
+            )}`;
+            restUtilsObj.doApexGet(url, req, res);
+        } else {
+            res.statusMessage =
+                'Invalid email address: Your organization is not a part of Salesforce Days';
+            res.status(400).send();
+        }
+    } else {
+        res.status(400).send();
+    }
+});
+
 
 app.listen(PORT, () =>
     console.log(`✅  API Server started: http://${HOST}:${PORT}`)

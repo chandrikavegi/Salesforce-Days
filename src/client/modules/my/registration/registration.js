@@ -23,6 +23,8 @@ export default class Registration extends LightningElement {
     showPopup = false;
     attendeeId;
     tshirtSize;
+    showBeginnerContent;
+    showAdvancedContent;
 
     connectedCallback() {
         this.attendeeId = localStorage.getItem('attendeeId_22');
@@ -35,6 +37,15 @@ export default class Registration extends LightningElement {
                 this.showPopup = true;
             }
         }
+    }
+    handleContent(event) {
+        this.showBeginnerContent = event.detail.showBeginner;
+        this.showAdvancedContent = event.detail.showAdvanced;
+        setTimeout(() => {
+            this.template
+                .querySelector('.welcome')
+                .scrollIntoView({ behavior: 'smooth', alignToTop: true });
+        }, 100);
     }
 
     handleEmailChange(event) {

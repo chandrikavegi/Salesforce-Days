@@ -1,55 +1,62 @@
 <template>
     <article class="slds-card">
-        <div class="slds-card__header slds-grid dayBanner">
-            <header
-                class="slds-media slds-media_center slds-has-flexi-truncate"
-            >
-                <div class="slds-media__figure"></div>
-                <div class="slds-p-bottom_medium slds-media__body dayBody">
-                    <h2 class="slds-card__header-title">{theme}</h2>
-                </div>
-            </header>
+        <div class="slds-card__header dayBanner slds-text-heading_medium">
+            {theme}
         </div>
         <div class="slds-card__body slds-card__body_inner consistent-height">
-            <br />
-
             <template if:true={showLock}>
                 <div class="slds-text-align_center slds-m-top_x-large">
                     <img src="/resources/noDataErrorIllustration.svg" />
                 </div>
             </template>
 
-            <template if:false={showLock}>
-                <template if:true={content}>
-                    <div
-                        class="slds-text-body_regular"
-                        style="line-height: 10px"
-                    >
+            <template if:true={content}>
+                <div
+                    class="
+                        slds-text-title_bold
+                        slds-m-top_small
+                        slds-m-bottom_small
+                    "
+                >
+                    YouTube Video
+                </div>
+                <div
+                    class="slds-text-body_regular"
+                    style="line-height: 5px; margin-bottom: 10px"
+                >
+                    <div class="video-container">
                         <iframe
                             src={content.tmUrl}
-                            width="225"
-                            height="200"
                             loading="lazy"
                             frameborder="0"
                         >
                         </iframe>
                     </div>
-                    <div>
-                        <template for:each={content.contentLinks} for:item="c">
-                            <span key={c.url}>
-                                <a href={c.url} target="_blank">
-                                    <img
-                                        src={c.type}
-                                        height="100"
-                                        width="100"
-                                        class="icon"
-                                    />
-                                </a>
-                            </span>
-                        </template>
-                    </div>
-                    <br />
-                </template>
+                </div>
+                <div class="slds-text-title_bold slds-m-top_large">
+                    Trailhead Badges
+                </div>
+                <div>
+                    <template for:each={content.contentLinks} for:item="c">
+                        <span key={c.url}>
+                            <svg
+                                class="
+                                    slds-icon
+                                    slds-icon-text-default
+                                    slds-icon-small
+                                    icon
+                                "
+                                aria-hidden="true"
+                            >
+                                <use xlink:href={c.type}></use>
+                            </svg>
+                            <span class="slds-assistive-text">{c.title}</span>
+                            <a href={c.url} target="_blank">{c.title}</a>
+                            <br />
+                        </span>
+                    </template>
+                </div>
+                <br />
             </template>
         </div>
         <template if:true={showLock}>

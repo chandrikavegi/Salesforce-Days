@@ -31,15 +31,15 @@
                                 "
                             >
                                 <lightning-input
-                                type="email"
-                                name="email"
-                                required="true"
-                                label="Please re-enter your corporate Email Address"
-                                onchange={handleEmailChange}
-                                disabled={disableform1}
-                                class="email1 slds-p-bottom_small"
-                            >
-                            </lightning-input>
+                                    type="email"
+                                    name="email"
+                                    required="true"
+                                    label="Please re-enter your corporate Email Address"
+                                    onchange={handleEmailChange}
+                                    disabled={disableform1}
+                                    class="email1 slds-p-bottom_small"
+                                >
+                                </lightning-input>
                                 <lightning-input
                                     type="email"
                                     name="themail"
@@ -129,7 +129,7 @@
                         </lightning-input>
 
                         <lightning-input
-                            type="themail"
+                            type="email"
                             name="themail"
                             required="true"
                             label="Trailhead Email Address"
@@ -177,28 +177,70 @@
             </div>
         </template>
         <template if:true={showContent}>
-            <div class="slds-p-around_x-large content">
+            <div
+                class="
+                    slds-text-align_center
+                    slds-p-top_x-large
+                    slds-text-heading_medium
+                    slds-m-bottom_medium
+                    welcome
+                "
+            >
+                <b
+                    >Hello,&nbsp;<span class="name">{attendeeName}</span>!
+                    Please click on a tile below to get started...</b
+                >
+            </div>
+
+            <my-process onshowcontent={handleContent}></my-process>
+
+            <div class="slds-m-top_small mainContent">
+                <template if:true={showBeginnerContent}>
+                    <my-all-days></my-all-days>
+                </template>
+                <template if:true={showAdvancedContent}>
+                    <th-all-badges></th-all-badges>
+                </template>
                 <div
                     class="
-                        slds-text-align_center
+                        terms-conditions
+                        slds-p-around_large
                         slds-m-top_x-large
-                        slds-m-aound_xx-large
-                        slds-text-heading_medium
+                        slds-p-bottom_x-large
                     "
                 >
-                    <b
-                        >Thanks for registering,&nbsp;
-                        <span class="name">{attendeeName}</span>!</b
-                    >
-                    <br /><br />
-                    <div>
-                        Join us, starting June 1st 2022 to July 9 2022, for a
-                        learning experience as we study the fundamentals of
-                        Salesforce and then dive into advanced concepts through
-                        Supersets and Superbadges!
-                    </div>
-                    <br /><br />
-                    <b>Bookmark and come back to this page on 1st June. </b>
+                    <div class="slds-text-title_bold">Program Terms</div>
+                    While supplies last. Open to adults who received this invite
+                    directly from Salesforce. Participants must be legal
+                    residents of India employed by a Salesforce partner company
+                    in India. To be eligible to receive a gift, complete the
+                    steps in either the “Beginner” or “Advanced” option of the
+                    “Be a Salesforce Developer” challenge between June 1, 2022
+                    9:00am, to July 9, 2022 5:00pm IST (“Offer Period”).
+                    Participants must register with their work email.
+                    Participants who are already Salesforce certified or have
+                    Trailhead super badges are not eligible. Excludes employees
+                    or officials of any government entity. Limit one (1) gift
+                    per person per Trailhead account subject to verification of
+                    eligibility and availability. Successful Beginner
+                    participants will receive a t-shirt gift. Successful
+                    Advanced participants will receive a Trailhead certification
+                    voucher. Vouchers are non-transferable or redeemable for
+                    cash. No rainchecks. Certification voucher (i) must be used
+                    by September 9, 2022, unless notified otherwise; (ii) cannot
+                    be combined with any other certification discounts or
+                    vouchers; and (iii) cannot be applied to past certification
+                    exams. Before claiming, check offer complies with your
+                    employer’s policies. Offer is not sponsored or endorsed by
+                    the product manufacturer. Offer subject to change at any
+                    time. Subject to verification of eligibility and
+                    availability. Additional terms may apply. By participating
+                    you agree to our&nbsp;
+                    <a
+                        href="https://www.salesforce.com/company/privacy/full_privacy/"
+                        target="_blank"
+                        >Privacy Statement</a
+                    >.
                 </div>
             </div>
         </template>

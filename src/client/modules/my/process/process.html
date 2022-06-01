@@ -1,23 +1,15 @@
 <template>
     <div class="slds-p-around_medium wrapper">
-        <div
-            class="
-                slds-m-top_x-large
-                slds-m-bottom_x-large
-                slds-text-align_center
-                slds-text-heading_large
-            "
-        >
-            <b>What you'll be doing</b>
-        </div>
         <div class="slds-grid slds-gutters slds-grid_align-center slds-wrap">
             <div
                 class="
                     slds-col
                     slds-size_1-of-1
-                    slds-medium-size_1-of-3
-                    slds-large-size_1-of-4
+                    slds-medium-size_1-of-2
+                    slds-large-size_1-of-3
+                    tile
                 "
+                onclick={handleBeginner}
             >
                 <article class="slds-card">
                     <div class="slds-card__header slds-grid">
@@ -28,37 +20,48 @@
                             "
                         >
                             <div class="slds-media__body">
-                                <span
-                                    class="
-                                        slds-icon_container
-                                        slds-icon_container_circle
-                                        slds-icon-action-description
-                                    "
-                                    title="Watch the daily video, released everyday morning, to learn each critical step in the app-building process"
-                                >
-                                    <svg class="slds-icon" aria-hidden="true">
-                                        <use
-                                            xlink:href="/resources/icons/utility-sprite/svg/symbols.svg#video"
-                                        ></use>
-                                    </svg>
-                                    <span class="slds-assistive-text"
-                                        >Watch the daily video, released
-                                        everyday morning,to learn each critical
-                                        step in the app-building process</span
-                                    >
-                                </span>
                                 <h2
-                                    class="slds-card__header-title"
-                                    style="margin-top: 10px"
+                                    class="
+                                        slds-card__header-title
+                                        slds-text-heading_large
+                                        slds-m-bottom_medium
+                                        slds-m-top_small
+                                    "
                                 >
-                                    STEP 1
+                                    Beginner
                                 </h2>
+                                <img
+                                    src="resources/salesforce-logo.svg"
+                                    width="100px"
+                                    height="80px"
+                                    class="slds-align_absolute-center"
+                                />
+                                <h3 class="slds-text-heading_small">
+                                    Fundamentals
+                                </h3>
                             </div>
                         </header>
                     </div>
-                    <div class="slds-card__body slds-card__body_inner">
-                        Watch the daily video, released everyday morning, to
-                        learn each critical step in the app-building process
+                    <div class="slds-card__body slds-card__body_inner body">
+                        <ol
+                            class="
+                                slds-list_ordered
+                                slds-m-top_large
+                                slds-text-heading_small
+                            "
+                        >
+                            <li class="slds-m-bottom_small">
+                                Watch the video tutorial, and complete the
+                                Trailhead Badges for each topic
+                            </li>
+                            <li class="slds-m-bottom_small">
+                                Apply your skills to solve a business challenge
+                            </li>
+                            <li class="slds-m-bottom_small">
+                                Participants who complete this level
+                                successfully will be eligible for a T-Shirt
+                            </li>
+                        </ol>
                     </div>
                 </article>
             </div>
@@ -66,9 +69,11 @@
                 class="
                     slds-col
                     slds-size_1-of-1
-                    slds-medium-size_1-of-3
-                    slds-large-size_1-of-4
+                    slds-medium-size_1-of-2
+                    slds-large-size_1-of-3
+                    tile
                 "
+                onclick={handleAdvanced}
             >
                 <article class="slds-card">
                     <div class="slds-card__header slds-grid">
@@ -79,86 +84,55 @@
                             "
                         >
                             <div class="slds-media__body">
-                                <span
-                                    class="
-                                        slds-icon_container
-                                        slds-icon_container_circle
-                                        slds-icon-action-description
-                                    "
-                                    title="Complete your daily Badges"
-                                >
-                                    <svg class="slds-icon" aria-hidden="true">
-                                        <use
-                                            xlink:href="/resources/icons/utility-sprite/svg/symbols.svg#trailhead                                            "
-                                        ></use>
-                                    </svg>
-                                    <span class="slds-assistive-text"
-                                        >Complete your daily Trailhead
-                                        badge(s)</span
-                                    >
-                                </span>
                                 <h2
-                                    class="slds-card__header-title"
-                                    style="margin-top: 10px"
+                                    class="
+                                        slds-card__header-title
+                                        slds-text-heading_large
+                                        slds-m-bottom_medium
+                                        slds-m-top_small
+                                    "
                                 >
-                                    STEP 2
+                                    Advanced
                                 </h2>
+                                <img
+                                    src="resources/superbadges.svg"
+                                    width="80px"
+                                    height="60px"
+                                    class="slds-align_absolute-center"
+                                />
+                                <h3 class="slds-text-heading_small">
+                                    Supersets &amp; Superbadges
+                                </h3>
                             </div>
                         </header>
                     </div>
-                    <div class="slds-card__body slds-card__body_inner">
-                        Complete your daily Trailhead Badge(s)
-                    </div>
-                </article>
-            </div>
-            <div
-                class="
-                    slds-col
-                    slds-size_1-of-1
-                    slds-medium-size_1-of-3
-                    slds-large-size_1-of-4
-                "
-            >
-                <article class="slds-card">
-                    <div class="slds-card__header slds-grid">
-                        <header
+                    <div class="slds-card__body slds-card__body_inner body">
+                        <ol
                             class="
-                                slds-media slds-media_center
-                                slds-has-flexi-truncate
+                                slds-list_ordered
+                                slds-m-top_large
+                                slds-text-heading_small
                             "
                         >
-                            <div class="slds-media__body">
-                                <span
-                                    class="
-                                        slds-icon_container
-                                        slds-icon_container_circle
-                                        slds-icon-action-description
-                                    "
-                                    title="Join us for a Quiz"
-                                >
-                                    <svg class="slds-icon" aria-hidden="true">
-                                        <use
-                                            xlink:href="/resources/icons/standard-sprite/svg/symbols.svg#thanks_loading"
-                                        ></use>
-                                    </svg>
-                                    <span class="slds-assistive-text"
-                                        >Join us for a Quiz</span
-                                    >
-                                </span>
-                                <h2
-                                    class="slds-card__header-title"
-                                    style="margin-top: 10px"
-                                >
-                                    STEP 3
-                                </h2>
-                            </div>
-                        </header>
-                    </div>
-                    <div class="slds-card__body slds-card__body_inner">
-                        Make sure you complete the Trailmix given for each day
-                        by <b>July 26th</b> and enter a chance to win an
-                        exclusive Salesforce T-Shirt.*
-                        <!-- (and win prizes) -->
+                            <li class="slds-m-bottom_small">
+                                Challenge yourself by completing any one of the
+                                supersets
+                                <ul class="slds-list_dotted">
+                                    <li class="slds-m-top_x-small">Admin</li>
+                                    <li class="slds-m-top_x-small">
+                                        App Builder
+                                    </li>
+                                    <li class="slds-m-top_x-small">
+                                        Developer
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="slds-m-bottom_small">
+                                Participants who complete this level
+                                successfully will be eligible for a $200
+                                certification voucher.
+                            </li>
+                        </ol>
                     </div>
                 </article>
             </div>

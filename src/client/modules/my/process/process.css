@@ -3,13 +3,47 @@
 }
 
 .slds-card {
-    text-align: center;
     margin-bottom: 1rem;
-    min-height: 190px;
-    min-width: 270px;
+    min-height: 460px;
+    background-color: #cfe9fe;
+    font-family: 'SalesforceSans-Regular';
 }
-@media (min-width: 1382px) {
-    .slds-large-size_1-of-4 {
-        width: 20%;
-    }
+
+.tile {
+    max-width: 460px;
+}
+
+.slds-card__header {
+    font-family: 'ITCAvantGardePro-Demi';
+}
+
+img {
+    min-height: 80px;
+    min-width: 80px;
+}
+
+.body {
+    text-align: left;
+}
+
+.slds-card:hover {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.active .slds-card {
+    background-color: #fff;
+    border: 2px solid #032d60;
+}
+
+.slds-card:hover::after {
+    content: 'Click to get started';
+    font-size: medium;
+    font-weight: bold;
+    color: #032d60;
+    font-family: 'SalesforceSans-Regular';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 25px;
 }

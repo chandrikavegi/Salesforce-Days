@@ -1,0 +1,21 @@
+.dayBanner {
+    background: #032d60;
+    color: white;
+    text-align: center;
+    font-family: 'ITCAvantGardePro-Demi';
+    padding-bottom: 0.75rem;
+    height: 75px;
+    display: grid;
+    align-items: center;
+}
+
+.slds-card {
+    max-width: 500px;
+    margin-bottom: 1rem;
+    text-align: left;
+    font-size: 14px;
+}
+
+sup{
+    color: red;
+}
