@@ -28,10 +28,8 @@ export default class AllWeeks extends LightningElement {
         contentLinks: [
             {
                 title: 'Automate Business Processes for a Recruiting App',
-                url:
-                    'https://trailhead.salesforce.com/en/content/learn/projects/automate-business-processes-recruiting-app',
-                type:
-                    '/resources/icons/utility-sprite/svg/symbols.svg#trailhead'
+                url: 'https://trailhead.salesforce.com/en/content/learn/projects/automate-business-processes-recruiting-app',
+                type: '/resources/icons/utility-sprite/svg/symbols.svg#trailhead'
             },
             {
                 title: 'Improve Data Quality for the App',
