@@ -1,5 +1,36 @@
 <template>
     <div class="wrapper">
+        <template if:true={showDialog}>
+            <section role="dialog"
+            tabindex="-1"
+            aria-modal="true"
+            aria-label="Modal popup"
+            class="slds-modal slds-backdrop slds-backdrop_open">
+            <div class="slds-modal__container">
+                <div class="slds-modal__header">
+                <h2 id="modal-heading" class="slds-modal__title">
+                    Just a Heads Up!
+                </h2>
+                </div>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <p>
+                        The schwags and vouchers for eligible winners will be handed over to the point of contact at your organization. For further information, please contact your internal team in charge of the Salesforce Day event.
+                    </p>
+                    
+                    <div class = "slds-p-around_medium">
+                    <lightning-button
+                                    label="OK"
+                                    variant="brand"
+                                    onclick={handleOk}
+                                    disabled={disableform1}
+                                >
+                                </lightning-button>
+                                </div>
+
+                </div>
+            </div>
+        </section>
+        </template>
         <template if:true={showPopup}>
             <section
                 role="dialog"

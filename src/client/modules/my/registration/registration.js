@@ -25,16 +25,24 @@ export default class Registration extends LightningElement {
     tshirtSize;
     showBeginnerContent;
     showAdvancedContent;
+    showDialog;
+    dialogCaptured;
 
     connectedCallback() {
         this.attendeeId = localStorage.getItem('attendeeId_22');
         const attendeeName = localStorage.getItem('attendeeName_22');
         const thEmailCaptured = localStorage.getItem('thEmailCaptured_22');
+        const dialogCaptured = localStorage.getItem('dialogCaptured');
         if (this.attendeeId && attendeeName) {
             this.attendeeName = attendeeName;
             this.showContent = true;
+
+            if(dialogCaptured!=='captured'){
+            this.showDialog = true;
+            }
             if (!thEmailCaptured) {
                 this.showPopup = true;
+
             }
         }
     }
@@ -123,7 +131,7 @@ export default class Registration extends LightningElement {
                     localStorage.setItem('attendeeId_22', this.leadId);
                     localStorage.setItem('attendeeName_22', this.name);
                     localStorage.setItem('thEmailCaptured_22', true);
-
+                    this.showDialog = true;
                     this.attendeeName = this.name;
                 })
                 .catch((error) => {
@@ -173,5 +181,10 @@ export default class Registration extends LightningElement {
                     this.showSpinner = false;
                 });
         }
+    }
+    handleOk(){
+        this.showDialog = false;
+        localStorage.setItem('dialogCaptured', 'captured');
+        console.log(this.showDialog);
     }
 }
