@@ -286,8 +286,7 @@ app.get('/api/updateThEmail', function (req, res) {
 });
 
 app.get('/api/updateHackCompletion', function (req, res) {
-    const { email, secret } = req.query;
-    if (secret === '300c31639e12c3582ac08bf480498779') {
+    const { email } = req.query;
         const lCEmail = email.toLowerCase();
         const domain = lCEmail.split('@')[1];
         if (validDomains.includes(domain)) {
@@ -300,9 +299,6 @@ app.get('/api/updateHackCompletion', function (req, res) {
                 'Invalid email address: Your organization is not a part of Salesforce Days';
             res.status(400).send();
         }
-    } else {
-        res.status(400).send();
-    }
 });
 
 app.listen(PORT, () =>
